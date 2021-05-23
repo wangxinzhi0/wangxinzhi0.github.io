@@ -5,9 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="hexo博客搭建, 个人博客">
-    <meta name="description" content="写在前面
-&amp;emsp;&amp;emsp;虽然博主关于怎么部署个人博客写的十分清除明白，但由于软件版本迭代等原因，实际操作可能出现各种问题。自己调试了好久，终于实现了这个博客主题，真的好开心，主题是的好看，感谢博主！特此记录操作过程。
-1. 环境准">
+    <meta name="description" content="hexo静态博客框架，mastery主题搭建个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -343,7 +341,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/23.35j98sguml00.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -503,7 +501,7 @@
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.6k
+                        1.8k
                     </div>
                 
 
@@ -711,6 +709,11 @@ tags:
 <td>文章转载规则，可以是 <code>cc_by</code>,<code>cc_by_nd</code>,<code>cc_by_sa</code>,<code>cc_by_nc</code>,<code>cc_by_nc_nd</code>,<code>cc_by_nc_sa</code>,<code>cc0</code>,<code>noreprint</code> 或 <code>pay</code> 中的一个</td>
 </tr>
 </tbody></table>
+<h1 id="5-主题音频、视频部署方法"><a href="#5-主题音频、视频部署方法" class="headerlink" title="5.主题音频、视频部署方法"></a>5.主题音频、视频部署方法</h1><p><strong>方案一</strong>：</p>
+<p>&emsp;&emsp;将本地音频、视频上传到<a href="https://u.3w.cn/home">三维推</a>，在主页场景应用中有音频推广和视频推广，上传等待审核即可。</p>
+<p>&emsp;&emsp;审核通过之后，复制应用链接，到浏览器地址栏访问。<strong>对于视频</strong>，右键检查，你会找到<code>src=&quot;https://xxx.mp4&quot;</code>链接，把它复制到<code>config.yml</code>首页视频设置即可。<strong>对于音频</strong>，右键检查，你会找到<code>src=&quot;https://xxx.mp3&quot;</code>链接，复制链接到<code>source/data/musics.json</code>中，音频封面图可以在网易云等网站找到，或者自己随便指定音频封面。</p>
+<p><strong>方案二</strong>：</p>
+<p>&emsp;&emsp;白嫖在线视频剪辑<a href="https://www.kapwing.com/">kapwing</a>空间（需要登录），导出视频，音频，右键检查，找到<code>mp4</code>和<code>mp3</code>链接，进行相关部署即可。</p>
 
             </div>
             <hr/>
@@ -1197,8 +1200,7 @@ tags:
                     <a href="/posts/31415.html">
                         <div class="card-image">
                             
-                                
-                                <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="hexo博客搭建">
+                                <img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/23.35j98sguml00.jpg" class="responsive-img" alt="hexo博客搭建">
                             
                             <span class="card-title">hexo博客搭建</span>
                         </div>
@@ -1206,9 +1208,7 @@ tags:
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                写在前面
-&emsp;&emsp;虽然博主关于怎么部署个人博客写的十分清除明白，但由于软件版本迭代等原因，实际操作可能出现各种问题。自己调试了好久，终于实现了这个博客主题，真的好开心，主题是的好看，感谢博主！特此记录操作过程。
-1. 环境准
+                                hexo静态博客框架，mastery主题搭建个人博客
                             
                         </div>
                         <div class="publish-info">
@@ -1249,8 +1249,7 @@ tags:
                     <a href="/posts/40779.html">
                         <div class="card-image">
                             
-                                
-                                <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Github博客关联个性化域名">
+                                <img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/7.2lchs6kk7400.jpg" class="responsive-img" alt="Github博客关联个性化域名">
                             
                             <span class="card-title">Github博客关联个性化域名</span>
                         </div>
@@ -1258,8 +1257,7 @@ tags:
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.申请和配置个人域名&emsp;&emsp;假定你已经部署了xxx.github.io的个人博客，想要配置xxx.top域名访问个人博客。
-&emsp;&emsp;这里以腾讯云为例，新用户可以1元白嫖一年域名，特别注意：域名的续费价格！！
+                                关联自己购买的个性化域名，更容易记忆和访问
                             
                         </div>
                         <div class="publish-info">
@@ -1281,8 +1279,12 @@ tags:
                     
                         <div class="card-action article-tags">
                             
-                                <a href="/tags/hugo-hexo/">
-                                    <span class="chip bg-color">hugo hexo</span>
+                                <a href="/tags/hugo/">
+                                    <span class="chip bg-color">hugo</span>
+                                </a>
+                            
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
                                 </a>
                             
                         </div>
@@ -1450,7 +1452,7 @@ tags:
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">71.2k</span>&nbsp;字
+                            class="white-color">71.4k</span>&nbsp;字
                 
                 
                     <span id="icp"><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/icp.2o22l1odsxm0.png" style="vertical-align: text-bottom;" alt="icp"/>
