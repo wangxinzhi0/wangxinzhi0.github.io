@@ -39,7 +39,11 @@
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
+
 <body>
+<!-- 深色模式按钮 -->
+<script> if (localStorage.getItem('dark') === '1') { document.body.classList.add('dark'); } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) { document.body.classList.add('dark'); } else if (matchMedia('(prefers-color-scheme: dark)').matches) { document.body.classList.add('dark'); } </script> <a onclick="switchNightMode()" id="sma"> <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i> </a>
+
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -494,7 +498,7 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2021-05-23
+                        2021-05-24
                     </div>
                 
 
@@ -524,15 +528,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>@<a href="PicX%E5%9B%BE%E5%BA%8A%E7%AE%A1%E7%90%86%E5%92%8C%E5%8A%A0%E9%80%9F%EF%BC%88Github%E5%9B%BE%E5%BA%8A%EF%BC%89">TOC</a></p>
-<h1 id="1-为什么需要图床？"><a href="#1-为什么需要图床？" class="headerlink" title="1.为什么需要图床？"></a>1.为什么需要图床？</h1><p>&emsp;&emsp;在写个人博客时，你一定有这样的烦恼，博客中的图片怎么存放呢？</p>
+<h2 id="1-为什么需要图床？"><a href="#1-为什么需要图床？" class="headerlink" title="1.为什么需要图床？"></a>1.为什么需要图床？</h2><p>&emsp;&emsp;在写个人博客时，你一定有这样的烦恼，博客中的图片怎么存放呢？</p>
 <ul>
 <li>第一种方案是保存在本地，使用绝对或相对路径引用图片（相对路径在上传到远端时可能可以正确显示，<code>typora</code>就是这样，但使用相对路径，在本地就无法查看了）。</li>
 <li>第二种方案是使用存储图片的服务器——即“图床”，获得一个图片链接，可以在本地和远程显示图片。</li>
 </ul>
 <p>&emsp;&emsp;你可能听说过图床，但却不知道怎么使用。别急，本文将详细讲述如何使用<code>github</code>搭建图床，并且使用<code>jsDelivr</code>进行<code>CDN</code>加速，在本地和远端都可以快速显示图片。</p>
 <p>&emsp;&emsp;关键是，免费、快速、方便。白嫖党的福音呀！！！</p>
-<h1 id="2-图床神器PicX"><a href="#2-图床神器PicX" class="headerlink" title="2. 图床神器PicX"></a>2. 图床神器PicX</h1><p>&emsp;&emsp;<code>PicX</code>：<a href="https://picx.xpoet.cn/">https://picx.xpoet.cn/</a>是基于GitHub API开发的图床神器。图片外链使用<code>jsDelivr</code>进行<code>CDN</code>加速，免下载，免安装，打开<a href="https://picx.xpoet.cn/">PicX官网</a>即可直接使用。</p>
-<h2 id="2-1结合GitHub仓库配置图床"><a href="#2-1结合GitHub仓库配置图床" class="headerlink" title="2.1结合GitHub仓库配置图床"></a>2.1结合GitHub仓库配置图床</h2><p>&emsp;&emsp;<a href="https://picx.xpoet.cn/">PicX官网</a>有配置教程，非常简单。</p>
+<h2 id="2-图床神器PicX"><a href="#2-图床神器PicX" class="headerlink" title="2. 图床神器PicX"></a>2. 图床神器PicX</h2><p>&emsp;&emsp;<code>PicX</code>：<a href="https://picx.xpoet.cn/">https://picx.xpoet.cn/</a>是基于GitHub API开发的图床神器。图片外链使用<code>jsDelivr</code>进行<code>CDN</code>加速，免下载，免安装，打开<a href="https://picx.xpoet.cn/">PicX官网</a>即可直接使用。</p>
+<h3 id="2-1结合GitHub仓库配置图床"><a href="#2-1结合GitHub仓库配置图床" class="headerlink" title="2.1结合GitHub仓库配置图床"></a>2.1结合GitHub仓库配置图床</h3><p>&emsp;&emsp;<a href="https://picx.xpoet.cn/">PicX官网</a>有配置教程，非常简单。</p>
 <ul>
 <li>第一步：创建一个用来存储图片的<a href="https://github.com/new">GitHub仓库</a></li>
 </ul>
@@ -557,7 +561,7 @@
 </li>
 </ul>
 <p>&emsp;&emsp;至此完成图床配置，现在就可以开始上传图片了，快去试试吧~</p>
-<h2 id="2-2-图床使用"><a href="#2-2-图床使用" class="headerlink" title="2.2 图床使用"></a>2.2 图床使用</h2><ol>
+<h3 id="2-2-图床使用"><a href="#2-2-图床使用" class="headerlink" title="2.2 图床使用"></a>2.2 图床使用</h3><ol>
 <li><strong>配置上传目录</strong></li>
 </ol>
 <p>&emsp;&emsp;首先指定当前博客图片的上传目录，以本博客为例，配置新建目录<code>picturebed</code>，将会在仓库根目录下新建picturebed目录，后续上传图片均在该目录。</p>
@@ -1018,6 +1022,15 @@
         placeholder: '说点什么呗'
     });
 </script>
+
+<!-- ֱ������ -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="To comment">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+
     
 
     
@@ -1097,12 +1110,12 @@
                     
                         <div class="card-action article-tags">
                             
-                                <a href="/tags/hugo/">
-                                    <span class="chip bg-color">hugo</span>
-                                </a>
-                            
                                 <a href="/tags/hexo/">
                                     <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="/tags/hugo/">
+                                    <span class="chip bg-color">hugo</span>
                                 </a>
                             
                         </div>
@@ -1318,7 +1331,7 @@
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">71.4k</span>&nbsp;字
+                            class="white-color">71.5k</span>&nbsp;字
                 
                 
                     <span id="icp"><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/icp.2o22l1odsxm0.png" style="vertical-align: text-bottom;" alt="icp"/>
@@ -1486,8 +1499,8 @@
     var OriginTitile = document.title,
         st;
     document.addEventListener("visibilitychange", function () {
-        document.hidden ? (document.title = "(oﾟvﾟ)ノ Hi", clearTimeout(st)) : (document.title =
-            "(*´∇｀*) 欢迎回来！", st = setTimeout(function () {
+        document.hidden ? (document.title = "≥Ö‿Ö≤ 网页崩溃了！", clearTimeout(st)) : (document.title =
+            "≥◔◡◔≤ 皮一下，很开心！", st = setTimeout(function () {
             document.title = OriginTitile
         }, 3e3))
     })
@@ -1509,5 +1522,8 @@
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
-</body>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":225,"height":380},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7}});</script></body>
 </html>

@@ -39,7 +39,11 @@
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
+
 <body>
+<!-- 深色模式按钮 -->
+<script> if (localStorage.getItem('dark') === '1') { document.body.classList.add('dark'); } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) { document.body.classList.add('dark'); } else if (matchMedia('(prefers-color-scheme: dark)').matches) { document.body.classList.add('dark'); } </script> <a onclick="switchNightMode()" id="sma"> <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i> </a>
+
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -371,7 +375,7 @@
 
     <script>
         // 每天切换 banner 图.  Switch banner image every day.
-        $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
+        $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
     </script>
 
     </div>
@@ -390,29 +394,20 @@
             <div class="tag-chips">
                 
                     
-                    <a href="/tags/hugo/" title="hugo: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                          data-tagname="hugo" style="background-color: #F9EBEA;">hugo
-                        <span class="tag-length">2</span>
-                    </span>
-                    </a>
-                
-                    
                     <a href="/tags/hexo/" title="hexo: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                          data-tagname="hexo" style="background-color: #F5EEF8;">hexo
+                          data-tagname="hexo" style="background-color: #F9EBEA;">hexo
                         <span class="tag-length">2</span>
                     </span>
                     </a>
                 
                     
-                    <a href="/tags/%E5%9B%BE%E5%BA%8A/" title="图床: 1">
+                    <a href="/tags/hugo/" title="hugo: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                          data-tagname="图床" style="background-color: #D5F5E3;">图床
-                        <span class="tag-length">1</span>
+                          data-tagname="hugo" style="background-color: #F5EEF8;">hugo
+                        <span class="tag-length">2</span>
                     </span>
                     </a>
                 
@@ -420,7 +415,16 @@
                     <a href="/tags/Git/" title="Git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                          data-tagname="Git" style="background-color: #E8F8F5;">Git
+                          data-tagname="Git" style="background-color: #D5F5E3;">Git
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/%E5%9B%BE%E5%BA%8A/" title="图床: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="图床" style="background-color: #E8F8F5;">图床
                         <span class="tag-length">1</span>
                     </span>
                     </a>
@@ -476,7 +480,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"hugo","weight":2,"link":"/tags/hugo/"},{"text":"hexo","weight":2,"link":"/tags/hexo/"},{"text":"图床","weight":1,"link":"/tags/%E5%9B%BE%E5%BA%8A/"},{"text":"Git","weight":1,"link":"/tags/Git/"},{"text":"LeetCode-easy","weight":1,"link":"/tags/LeetCode-easy/"},{"text":"LeetCode","weight":2,"link":"/tags/LeetCode/"},{"text":"LeetCode-medium","weight":1,"link":"/tags/LeetCode-medium/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"hexo","weight":2,"link":"/tags/hexo/"},{"text":"hugo","weight":2,"link":"/tags/hugo/"},{"text":"Git","weight":1,"link":"/tags/Git/"},{"text":"图床","weight":1,"link":"/tags/%E5%9B%BE%E5%BA%8A/"},{"text":"LeetCode-easy","weight":1,"link":"/tags/LeetCode-easy/"},{"text":"LeetCode","weight":2,"link":"/tags/LeetCode/"},{"text":"LeetCode-medium","weight":1,"link":"/tags/LeetCode-medium/"}], {
         autoResize: true
     });
 </script>
@@ -515,7 +519,7 @@
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">71.4k</span>&nbsp;字
+                            class="white-color">71.5k</span>&nbsp;字
                 
                 
                     <span id="icp"><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/icp.2o22l1odsxm0.png" style="vertical-align: text-bottom;" alt="icp"/>
@@ -683,8 +687,8 @@
     var OriginTitile = document.title,
         st;
     document.addEventListener("visibilitychange", function () {
-        document.hidden ? (document.title = "(oﾟvﾟ)ノ Hi", clearTimeout(st)) : (document.title =
-            "(*´∇｀*) 欢迎回来！", st = setTimeout(function () {
+        document.hidden ? (document.title = "≥Ö‿Ö≤ 网页崩溃了！", clearTimeout(st)) : (document.title =
+            "≥◔◡◔≤ 皮一下，很开心！", st = setTimeout(function () {
             document.title = OriginTitile
         }, 3e3))
     })
@@ -706,5 +710,8 @@
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
-</body>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":225,"height":380},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7}});</script></body>
 </html>

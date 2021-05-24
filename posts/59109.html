@@ -39,7 +39,11 @@
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
+
 <body>
+<!-- 深色模式按钮 -->
+<script> if (localStorage.getItem('dark') === '1') { document.body.classList.add('dark'); } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) { document.body.classList.add('dark'); } else if (matchMedia('(prefers-color-scheme: dark)').matches) { document.body.classList.add('dark'); } </script> <a onclick="switchNightMode()" id="sma"> <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i> </a>
+
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -498,7 +502,7 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2021-05-23
+                        2021-05-24
                     </div>
                 
 
@@ -530,7 +534,7 @@
                 <ul>
 <li>参考网站<a href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/">力扣加加</a></li>
 </ul>
-<h1 id="高频中等题"><a href="#高频中等题" class="headerlink" title="高频中等题"></a>高频中等题</h1><h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><h2 id="面试题-17-09-第-k-个数"><a href="#面试题-17-09-第-k-个数" class="headerlink" title="面试题 17.09. 第 k 个数"></a>面试题 17.09. 第 k 个数</h2><p><strong>题目地址</strong>:<a href="https://leetcode-cn.com/problems/get-kth-magic-number-lcci/">https://leetcode-cn.com/problems/get-kth-magic-number-lcci/</a></p>
+<h1 id="高频中等题"><a href="#高频中等题" class="headerlink" title="高频中等题"></a>高频中等题</h1><h2 id="面试题-17-09-第-k-个数"><a href="#面试题-17-09-第-k-个数" class="headerlink" title="面试题 17.09. 第 k 个数"></a>面试题 17.09. 第 k 个数</h2><p><strong>题目地址</strong>:<a href="https://leetcode-cn.com/problems/get-kth-magic-number-lcci/">https://leetcode-cn.com/problems/get-kth-magic-number-lcci/</a></p>
 <p><strong>方法一</strong>：动态规划+三指针</p>
 <p><strong>思路及算法</strong></p>
 <p>动态规划</p>
@@ -2405,7 +2409,7 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
 <li>时间复杂度：O(m)。由于我们交换行列的值并不会对答案产生影响，因此我们总可以通过交换 m 和 n 使得 m≤n，这样空间复杂度降低至 O(min(m,n))。</li>
 <li>空间复杂度：O(1)</li>
 </ul>
-<h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><h2 id="0073-矩阵置零"><a href="#0073-矩阵置零" class="headerlink" title="0073. 矩阵置零"></a>0073. 矩阵置零</h2><p><strong>题目地址</strong>:<a href="https://leetcode-cn.com/problems/set-matrix-zeroes/">https://leetcode-cn.com/problems/set-matrix-zeroes/</a></p>
+<h2 id="0073-矩阵置零"><a href="#0073-矩阵置零" class="headerlink" title="0073. 矩阵置零"></a>0073. 矩阵置零</h2><p><strong>题目地址</strong>:<a href="https://leetcode-cn.com/problems/set-matrix-zeroes/">https://leetcode-cn.com/problems/set-matrix-zeroes/</a></p>
 <p><strong>方法一</strong>：使用标记数组</p>
 <p><strong>思路及算法</strong></p>
 <p>本题难点：如果在输入矩阵上原地修改行列为<code>0</code>，会影响后续遍历判断。</p>
@@ -3292,7 +3296,7 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
 <p><strong>0145后序遍历题目地址</strong>：<a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">https://leetcode-cn.com/problems/binary-tree-postorder-traversal/</a></p>
 <p><strong>0102层序遍历题目地址</strong>:<a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">https://leetcode-cn.com/problems/binary-tree-level-order-traversal/</a></p>
 <p>解题总结在<code>0094</code>中序遍历！！！</p>
-<h1 id="第三部分"><a href="#第三部分" class="headerlink" title="第三部分"></a>第三部分</h1><h2 id="0147-对链表进行插入排序"><a href="#0147-对链表进行插入排序" class="headerlink" title="0147. 对链表进行插入排序"></a>0147. 对链表进行插入排序</h2><h2 id="0150-逆波兰表达式求值"><a href="#0150-逆波兰表达式求值" class="headerlink" title="0150. 逆波兰表达式求值"></a>0150. 逆波兰表达式求值</h2><h2 id="0152-乘积最大子数组"><a href="#0152-乘积最大子数组" class="headerlink" title="0152. 乘积最大子数组"></a>0152. 乘积最大子数组</h2><h2 id="0198-打家劫舍"><a href="#0198-打家劫舍" class="headerlink" title="0198 打家劫舍"></a>0198 打家劫舍</h2><p><strong>题目地址</strong>:</p>
+<h2 id="0147-对链表进行插入排序"><a href="#0147-对链表进行插入排序" class="headerlink" title="0147. 对链表进行插入排序"></a>0147. 对链表进行插入排序</h2><h2 id="0150-逆波兰表达式求值"><a href="#0150-逆波兰表达式求值" class="headerlink" title="0150. 逆波兰表达式求值"></a>0150. 逆波兰表达式求值</h2><h2 id="0152-乘积最大子数组"><a href="#0152-乘积最大子数组" class="headerlink" title="0152. 乘积最大子数组"></a>0152. 乘积最大子数组</h2><h2 id="0198-打家劫舍"><a href="#0198-打家劫舍" class="headerlink" title="0198 打家劫舍"></a>0198 打家劫舍</h2><p><strong>题目地址</strong>:</p>
 <p><strong>方法一</strong>：</p>
 <p><strong>思路及算法</strong></p>
 <p><strong>代码</strong></p>
@@ -3307,7 +3311,7 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
 <p><strong>思路及算法</strong></p>
 <p><strong>代码</strong></p>
 <p><strong>复杂度分析</strong></p>
-<h2 id="0445-两数相加-II"><a href="#0445-两数相加-II" class="headerlink" title="0445. 两数相加 II"></a>0445. 两数相加 II</h2><h2 id="0454-四数相加-II"><a href="#0454-四数相加-II" class="headerlink" title="0454. 四数相加 II"></a>0454. 四数相加 II</h2><h2 id="0464-我能赢么"><a href="#0464-我能赢么" class="headerlink" title="0464. 我能赢么"></a>0464. 我能赢么</h2><h2 id="0494-目标和"><a href="#0494-目标和" class="headerlink" title="0494. 目标和"></a>0494. 目标和</h2><h2 id="0516-最长回文子序列"><a href="#0516-最长回文子序列" class="headerlink" title="0516. 最长回文子序列"></a>0516. 最长回文子序列</h2><h2 id="0513-找树左下角的值"><a href="#0513-找树左下角的值" class="headerlink" title="0513. 找树左下角的值"></a>0513. 找树左下角的值</h2><h2 id="0518-零钱兑换-II"><a href="#0518-零钱兑换-II" class="headerlink" title="0518. 零钱兑换 II"></a>0518. 零钱兑换 II</h2><h2 id="0547-朋友圈"><a href="#0547-朋友圈" class="headerlink" title="0547. 朋友圈"></a>0547. 朋友圈</h2><h2 id="0560-和为-K-的子数组"><a href="#0560-和为-K-的子数组" class="headerlink" title="0560. 和为 K 的子数组"></a>0560. 和为 K 的子数组</h2><h1 id="第五部分"><a href="#第五部分" class="headerlink" title="第五部分"></a>第五部分</h1><h2 id="0609-在系统中查找重复文件"><a href="#0609-在系统中查找重复文件" class="headerlink" title="0609. 在系统中查找重复文件"></a>0609. 在系统中查找重复文件</h2><h2 id="0611-有效三角形的个数"><a href="#0611-有效三角形的个数" class="headerlink" title="0611. 有效三角形的个数"></a>0611. 有效三角形的个数</h2><h2 id="0686-重复叠加字符串匹配"><a href="#0686-重复叠加字符串匹配" class="headerlink" title="0686. 重复叠加字符串匹配"></a>0686. 重复叠加字符串匹配</h2><h2 id="0718-最长重复子数组"><a href="#0718-最长重复子数组" class="headerlink" title="0718. 最长重复子数组"></a>0718. 最长重复子数组</h2><h2 id="0754-到达终点数字"><a href="#0754-到达终点数字" class="headerlink" title="0754. 到达终点数字"></a>0754. 到达终点数字</h2><h2 id="0785-判断二分图"><a href="#0785-判断二分图" class="headerlink" title="0785. 判断二分图"></a>0785. 判断二分图</h2><h2 id="0816-模糊坐标"><a href="#0816-模糊坐标" class="headerlink" title="0816. 模糊坐标"></a>0816. 模糊坐标</h2><h2 id="0820-单词的压缩编码"><a href="#0820-单词的压缩编码" class="headerlink" title="0820. 单词的压缩编码"></a>0820. 单词的压缩编码</h2><h2 id="0875-爱吃香蕉的珂珂"><a href="#0875-爱吃香蕉的珂珂" class="headerlink" title="0875. 爱吃香蕉的珂珂"></a>0875. 爱吃香蕉的珂珂</h2><h2 id="0877-石子游戏"><a href="#0877-石子游戏" class="headerlink" title="0877. 石子游戏"></a>0877. 石子游戏</h2><h2 id="0886-可能的二分法"><a href="#0886-可能的二分法" class="headerlink" title="0886. 可能的二分法"></a>0886. 可能的二分法</h2><h2 id="0900-RLE-迭代器"><a href="#0900-RLE-迭代器" class="headerlink" title="0900. RLE 迭代器"></a>0900. RLE 迭代器</h2><h2 id="0911-在线选举"><a href="#0911-在线选举" class="headerlink" title="0911. 在线选举"></a>0911. 在线选举</h2><h2 id="0912-排序数组"><a href="#0912-排序数组" class="headerlink" title="0912. 排序数组"></a>0912. 排序数组</h2><h2 id="0935-骑士拨号器"><a href="#0935-骑士拨号器" class="headerlink" title="0935. 骑士拨号器"></a>0935. 骑士拨号器</h2><h2 id="0978-最长湍流子数组"><a href="#0978-最长湍流子数组" class="headerlink" title="0978. 最长湍流子数组"></a>0978. 最长湍流子数组</h2><h2 id="0987-二叉树的垂序遍历"><a href="#0987-二叉树的垂序遍历" class="headerlink" title="0987. 二叉树的垂序遍历"></a>0987. 二叉树的垂序遍历</h2><h2 id="1011-在-D-天内送达包裹的能力"><a href="#1011-在-D-天内送达包裹的能力" class="headerlink" title="1011. 在 D 天内送达包裹的能力"></a>1011. 在 D 天内送达包裹的能力</h2><h2 id="1014-最佳观光组合"><a href="#1014-最佳观光组合" class="headerlink" title="1014. 最佳观光组合"></a>1014. 最佳观光组合</h2><h2 id="1015-可被-K-整除的最小整数"><a href="#1015-可被-K-整除的最小整数" class="headerlink" title="1015. 可被 K 整除的最小整数"></a>1015. 可被 K 整除的最小整数</h2><h1 id="第六部分"><a href="#第六部分" class="headerlink" title="第六部分"></a>第六部分</h1><h2 id="1019-链表中的下一个更大节点"><a href="#1019-链表中的下一个更大节点" class="headerlink" title="1019. 链表中的下一个更大节点"></a>1019. 链表中的下一个更大节点</h2><h2 id="1020-飞地的数量"><a href="#1020-飞地的数量" class="headerlink" title="1020. 飞地的数量"></a>1020. 飞地的数量</h2><h2 id="1023-驼峰式匹配"><a href="#1023-驼峰式匹配" class="headerlink" title="1023. 驼峰式匹配"></a>1023. 驼峰式匹配</h2><h2 id="1031-两个非重叠子数组的最大和"><a href="#1031-两个非重叠子数组的最大和" class="headerlink" title="1031. 两个非重叠子数组的最大和"></a>1031. 两个非重叠子数组的最大和</h2><h2 id="1104-二叉树寻路"><a href="#1104-二叉树寻路" class="headerlink" title="1104. 二叉树寻路"></a>1104. 二叉树寻路</h2><h2 id="1131-绝对值表达式的最大值"><a href="#1131-绝对值表达式的最大值" class="headerlink" title="1131.绝对值表达式的最大值"></a>1131.绝对值表达式的最大值</h2><h2 id="1186-删除一次得到子数组最大和"><a href="#1186-删除一次得到子数组最大和" class="headerlink" title="1186. 删除一次得到子数组最大和"></a>1186. 删除一次得到子数组最大和</h2><h2 id="1218-最长定差子序列"><a href="#1218-最长定差子序列" class="headerlink" title="1218. 最长定差子序列"></a>1218. 最长定差子序列</h2><h2 id="1227-飞机座位分配概率"><a href="#1227-飞机座位分配概率" class="headerlink" title="1227. 飞机座位分配概率"></a>1227. 飞机座位分配概率</h2><h2 id="1261-在受污染的二叉树中查找元素"><a href="#1261-在受污染的二叉树中查找元素" class="headerlink" title="1261. 在受污染的二叉树中查找元素"></a>1261. 在受污染的二叉树中查找元素</h2><h2 id="1262-可被三整除的最大和"><a href="#1262-可被三整除的最大和" class="headerlink" title="1262. 可被三整除的最大和"></a>1262. 可被三整除的最大和</h2><h2 id="1297-子串的最大出现次数"><a href="#1297-子串的最大出现次数" class="headerlink" title="1297. 子串的最大出现次数"></a>1297. 子串的最大出现次数</h2><h2 id="1310-子数组异或查询"><a href="#1310-子数组异或查询" class="headerlink" title="1310. 子数组异或查询"></a>1310. 子数组异或查询</h2><h2 id="1334-阈值距离内邻居最少的城市"><a href="#1334-阈值距离内邻居最少的城市" class="headerlink" title="1334. 阈值距离内邻居最少的城市"></a>1334. 阈值距离内邻居最少的城市</h2><h2 id="1371-每个元音包含偶数次的最长子字符串"><a href="#1371-每个元音包含偶数次的最长子字符串" class="headerlink" title="1371.每个元音包含偶数次的最长子字符串"></a>1371.每个元音包含偶数次的最长子字符串</h2><h2 id="1381-设计一个支持增量操作的栈"><a href="#1381-设计一个支持增量操作的栈" class="headerlink" title="1381. 设计一个支持增量操作的栈"></a>1381. 设计一个支持增量操作的栈</h2><h2 id="1558-得到目标数组的最少函数调用次数"><a href="#1558-得到目标数组的最少函数调用次数" class="headerlink" title="1558. 得到目标数组的最少函数调用次数"></a>1558. 得到目标数组的最少函数调用次数</h2><h2 id="1574-删除最短的子数组使剩余数组有序"><a href="#1574-删除最短的子数组使剩余数组有序" class="headerlink" title="1574. 删除最短的子数组使剩余数组有序"></a>1574. 删除最短的子数组使剩余数组有序</h2><h2 id="1631-最小体力消耗路径"><a href="#1631-最小体力消耗路径" class="headerlink" title="1631. 最小体力消耗路径"></a>1631. 最小体力消耗路径</h2><h2 id="1658-将-x-减到-0-的最小操作数"><a href="#1658-将-x-减到-0-的最小操作数" class="headerlink" title="1658. 将 x 减到 0 的最小操作数"></a>1658. 将 x 减到 0 的最小操作数</h2>
+<h2 id="0445-两数相加-II"><a href="#0445-两数相加-II" class="headerlink" title="0445. 两数相加 II"></a>0445. 两数相加 II</h2><h2 id="0454-四数相加-II"><a href="#0454-四数相加-II" class="headerlink" title="0454. 四数相加 II"></a>0454. 四数相加 II</h2><h2 id="0464-我能赢么"><a href="#0464-我能赢么" class="headerlink" title="0464. 我能赢么"></a>0464. 我能赢么</h2><h2 id="0494-目标和"><a href="#0494-目标和" class="headerlink" title="0494. 目标和"></a>0494. 目标和</h2><h2 id="0516-最长回文子序列"><a href="#0516-最长回文子序列" class="headerlink" title="0516. 最长回文子序列"></a>0516. 最长回文子序列</h2><h2 id="0513-找树左下角的值"><a href="#0513-找树左下角的值" class="headerlink" title="0513. 找树左下角的值"></a>0513. 找树左下角的值</h2><h2 id="0518-零钱兑换-II"><a href="#0518-零钱兑换-II" class="headerlink" title="0518. 零钱兑换 II"></a>0518. 零钱兑换 II</h2><h2 id="0547-朋友圈"><a href="#0547-朋友圈" class="headerlink" title="0547. 朋友圈"></a>0547. 朋友圈</h2><h2 id="0560-和为-K-的子数组"><a href="#0560-和为-K-的子数组" class="headerlink" title="0560. 和为 K 的子数组"></a>0560. 和为 K 的子数组</h2><h2 id="0609-在系统中查找重复文件"><a href="#0609-在系统中查找重复文件" class="headerlink" title="0609. 在系统中查找重复文件"></a>0609. 在系统中查找重复文件</h2><h2 id="0611-有效三角形的个数"><a href="#0611-有效三角形的个数" class="headerlink" title="0611. 有效三角形的个数"></a>0611. 有效三角形的个数</h2><h2 id="0686-重复叠加字符串匹配"><a href="#0686-重复叠加字符串匹配" class="headerlink" title="0686. 重复叠加字符串匹配"></a>0686. 重复叠加字符串匹配</h2><h2 id="0718-最长重复子数组"><a href="#0718-最长重复子数组" class="headerlink" title="0718. 最长重复子数组"></a>0718. 最长重复子数组</h2><h2 id="0754-到达终点数字"><a href="#0754-到达终点数字" class="headerlink" title="0754. 到达终点数字"></a>0754. 到达终点数字</h2><h2 id="0785-判断二分图"><a href="#0785-判断二分图" class="headerlink" title="0785. 判断二分图"></a>0785. 判断二分图</h2><h2 id="0816-模糊坐标"><a href="#0816-模糊坐标" class="headerlink" title="0816. 模糊坐标"></a>0816. 模糊坐标</h2><h2 id="0820-单词的压缩编码"><a href="#0820-单词的压缩编码" class="headerlink" title="0820. 单词的压缩编码"></a>0820. 单词的压缩编码</h2><h2 id="0875-爱吃香蕉的珂珂"><a href="#0875-爱吃香蕉的珂珂" class="headerlink" title="0875. 爱吃香蕉的珂珂"></a>0875. 爱吃香蕉的珂珂</h2><h2 id="0877-石子游戏"><a href="#0877-石子游戏" class="headerlink" title="0877. 石子游戏"></a>0877. 石子游戏</h2><h2 id="0886-可能的二分法"><a href="#0886-可能的二分法" class="headerlink" title="0886. 可能的二分法"></a>0886. 可能的二分法</h2><h2 id="0900-RLE-迭代器"><a href="#0900-RLE-迭代器" class="headerlink" title="0900. RLE 迭代器"></a>0900. RLE 迭代器</h2><h2 id="0911-在线选举"><a href="#0911-在线选举" class="headerlink" title="0911. 在线选举"></a>0911. 在线选举</h2><h2 id="0912-排序数组"><a href="#0912-排序数组" class="headerlink" title="0912. 排序数组"></a>0912. 排序数组</h2><h2 id="0935-骑士拨号器"><a href="#0935-骑士拨号器" class="headerlink" title="0935. 骑士拨号器"></a>0935. 骑士拨号器</h2><h2 id="0978-最长湍流子数组"><a href="#0978-最长湍流子数组" class="headerlink" title="0978. 最长湍流子数组"></a>0978. 最长湍流子数组</h2><h2 id="0987-二叉树的垂序遍历"><a href="#0987-二叉树的垂序遍历" class="headerlink" title="0987. 二叉树的垂序遍历"></a>0987. 二叉树的垂序遍历</h2><h2 id="1011-在-D-天内送达包裹的能力"><a href="#1011-在-D-天内送达包裹的能力" class="headerlink" title="1011. 在 D 天内送达包裹的能力"></a>1011. 在 D 天内送达包裹的能力</h2><h2 id="1014-最佳观光组合"><a href="#1014-最佳观光组合" class="headerlink" title="1014. 最佳观光组合"></a>1014. 最佳观光组合</h2><h2 id="1015-可被-K-整除的最小整数"><a href="#1015-可被-K-整除的最小整数" class="headerlink" title="1015. 可被 K 整除的最小整数"></a>1015. 可被 K 整除的最小整数</h2><h2 id="1019-链表中的下一个更大节点"><a href="#1019-链表中的下一个更大节点" class="headerlink" title="1019. 链表中的下一个更大节点"></a>1019. 链表中的下一个更大节点</h2><h2 id="1020-飞地的数量"><a href="#1020-飞地的数量" class="headerlink" title="1020. 飞地的数量"></a>1020. 飞地的数量</h2><h2 id="1023-驼峰式匹配"><a href="#1023-驼峰式匹配" class="headerlink" title="1023. 驼峰式匹配"></a>1023. 驼峰式匹配</h2><h2 id="1031-两个非重叠子数组的最大和"><a href="#1031-两个非重叠子数组的最大和" class="headerlink" title="1031. 两个非重叠子数组的最大和"></a>1031. 两个非重叠子数组的最大和</h2><h2 id="1104-二叉树寻路"><a href="#1104-二叉树寻路" class="headerlink" title="1104. 二叉树寻路"></a>1104. 二叉树寻路</h2><h2 id="1131-绝对值表达式的最大值"><a href="#1131-绝对值表达式的最大值" class="headerlink" title="1131.绝对值表达式的最大值"></a>1131.绝对值表达式的最大值</h2><h2 id="1186-删除一次得到子数组最大和"><a href="#1186-删除一次得到子数组最大和" class="headerlink" title="1186. 删除一次得到子数组最大和"></a>1186. 删除一次得到子数组最大和</h2><h2 id="1218-最长定差子序列"><a href="#1218-最长定差子序列" class="headerlink" title="1218. 最长定差子序列"></a>1218. 最长定差子序列</h2><h2 id="1227-飞机座位分配概率"><a href="#1227-飞机座位分配概率" class="headerlink" title="1227. 飞机座位分配概率"></a>1227. 飞机座位分配概率</h2><h2 id="1261-在受污染的二叉树中查找元素"><a href="#1261-在受污染的二叉树中查找元素" class="headerlink" title="1261. 在受污染的二叉树中查找元素"></a>1261. 在受污染的二叉树中查找元素</h2><h2 id="1262-可被三整除的最大和"><a href="#1262-可被三整除的最大和" class="headerlink" title="1262. 可被三整除的最大和"></a>1262. 可被三整除的最大和</h2><h2 id="1297-子串的最大出现次数"><a href="#1297-子串的最大出现次数" class="headerlink" title="1297. 子串的最大出现次数"></a>1297. 子串的最大出现次数</h2><h2 id="1310-子数组异或查询"><a href="#1310-子数组异或查询" class="headerlink" title="1310. 子数组异或查询"></a>1310. 子数组异或查询</h2><h2 id="1334-阈值距离内邻居最少的城市"><a href="#1334-阈值距离内邻居最少的城市" class="headerlink" title="1334. 阈值距离内邻居最少的城市"></a>1334. 阈值距离内邻居最少的城市</h2><h2 id="1371-每个元音包含偶数次的最长子字符串"><a href="#1371-每个元音包含偶数次的最长子字符串" class="headerlink" title="1371.每个元音包含偶数次的最长子字符串"></a>1371.每个元音包含偶数次的最长子字符串</h2><h2 id="1381-设计一个支持增量操作的栈"><a href="#1381-设计一个支持增量操作的栈" class="headerlink" title="1381. 设计一个支持增量操作的栈"></a>1381. 设计一个支持增量操作的栈</h2><h2 id="1558-得到目标数组的最少函数调用次数"><a href="#1558-得到目标数组的最少函数调用次数" class="headerlink" title="1558. 得到目标数组的最少函数调用次数"></a>1558. 得到目标数组的最少函数调用次数</h2><h2 id="1574-删除最短的子数组使剩余数组有序"><a href="#1574-删除最短的子数组使剩余数组有序" class="headerlink" title="1574. 删除最短的子数组使剩余数组有序"></a>1574. 删除最短的子数组使剩余数组有序</h2><h2 id="1631-最小体力消耗路径"><a href="#1631-最小体力消耗路径" class="headerlink" title="1631. 最小体力消耗路径"></a>1631. 最小体力消耗路径</h2><h2 id="1658-将-x-减到-0-的最小操作数"><a href="#1658-将-x-减到-0-的最小操作数" class="headerlink" title="1658. 将 x 减到 0 的最小操作数"></a>1658. 将 x 减到 0 的最小操作数</h2>
             </div>
             <hr/>
 
@@ -3747,6 +3751,15 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
         placeholder: '说点什么呗'
     });
 </script>
+
+<!-- ֱ������ -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="To comment">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+
     
 
     
@@ -4047,7 +4060,7 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">71.4k</span>&nbsp;字
+                            class="white-color">71.5k</span>&nbsp;字
                 
                 
                     <span id="icp"><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/icp.2o22l1odsxm0.png" style="vertical-align: text-bottom;" alt="icp"/>
@@ -4215,8 +4228,8 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
     var OriginTitile = document.title,
         st;
     document.addEventListener("visibilitychange", function () {
-        document.hidden ? (document.title = "(oﾟvﾟ)ノ Hi", clearTimeout(st)) : (document.title =
-            "(*´∇｀*) 欢迎回来！", st = setTimeout(function () {
+        document.hidden ? (document.title = "≥Ö‿Ö≤ 网页崩溃了！", clearTimeout(st)) : (document.title =
+            "≥◔◡◔≤ 皮一下，很开心！", st = setTimeout(function () {
             document.title = OriginTitile
         }, 3e3))
     })
@@ -4238,5 +4251,8 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
-</body>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":225,"height":380},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7}});</script></body>
 </html>

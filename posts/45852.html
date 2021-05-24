@@ -39,7 +39,11 @@
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
+
 <body>
+<!-- 深色模式按钮 -->
+<script> if (localStorage.getItem('dark') === '1') { document.body.classList.add('dark'); } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) { document.body.classList.add('dark'); } else if (matchMedia('(prefers-color-scheme: dark)').matches) { document.body.classList.add('dark'); } </script> <a onclick="switchNightMode()" id="sma"> <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i> </a>
+
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -498,7 +502,7 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2021-05-23
+                        2021-05-24
                     </div>
                 
 
@@ -530,7 +534,7 @@
                 <ul>
 <li>参考网站<a href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/">力扣加加</a></li>
 </ul>
-<h1 id="高频简单题"><a href="#高频简单题" class="headerlink" title="高频简单题"></a>高频简单题</h1><h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><h2 id="面试题-BiNode"><a href="#面试题-BiNode" class="headerlink" title="面试题 BiNode"></a>面试题 BiNode</h2><p><strong>题目地址:</strong><a href="https://leetcode-cn.com/problems/binode-lcci/">https://leetcode-cn.com/problems/binode-lcci/</a></p>
+<h1 id="高频简单题"><a href="#高频简单题" class="headerlink" title="高频简单题"></a>高频简单题</h1><h2 id="面试题-BiNode"><a href="#面试题-BiNode" class="headerlink" title="面试题 BiNode"></a>面试题 BiNode</h2><p><strong>题目地址:</strong><a href="https://leetcode-cn.com/problems/binode-lcci/">https://leetcode-cn.com/problems/binode-lcci/</a></p>
 <p><strong>方法一</strong>：递归+中序遍历</p>
 <p><strong>思路及算法</strong></p>
 <p>要求是原值修改，即要<strong>利用这些已经存在的节点空间</strong>，<strong>修改</strong>这些节点的<strong>指向</strong>来得到单向链表。</p>
@@ -1803,7 +1807,7 @@
 <li>时间复杂度：O(n)，需要对链表的每个节点进行反转操作。</li>
 <li>空间复杂度：O(n)，取决于递归调用栈空间，最多为n层。</li>
 </ul>
-<h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><h2 id="0219-存在重复元素-II"><a href="#0219-存在重复元素-II" class="headerlink" title="0219 存在重复元素 II"></a>0219 存在重复元素 II</h2><p><strong>题目地址:</strong><a href="https://leetcode-cn.com/problems/contains-duplicate-ii/">https://leetcode-cn.com/problems/contains-duplicate-ii/</a></p>
+<h2 id="0219-存在重复元素-II"><a href="#0219-存在重复元素-II" class="headerlink" title="0219 存在重复元素 II"></a>0219 存在重复元素 II</h2><p><strong>题目地址:</strong><a href="https://leetcode-cn.com/problems/contains-duplicate-ii/">https://leetcode-cn.com/problems/contains-duplicate-ii/</a></p>
 <p><strong>方法一</strong>：哈希表+滑动窗口</p>
 <p><strong>思路及算法</strong></p>
 <p>用哈希表维护有一个大小为k的滑动窗口，哈希表能在常数时间内完成搜索、删除、插入等操作，所以我们只需要遍历数组一次。</p>
@@ -3161,6 +3165,15 @@
         placeholder: '说点什么呗'
     });
 </script>
+
+<!-- ֱ������ -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="To comment">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+
     
 
     
@@ -3461,7 +3474,7 @@
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">71.4k</span>&nbsp;字
+                            class="white-color">71.5k</span>&nbsp;字
                 
                 
                     <span id="icp"><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/icp.2o22l1odsxm0.png" style="vertical-align: text-bottom;" alt="icp"/>
@@ -3629,8 +3642,8 @@
     var OriginTitile = document.title,
         st;
     document.addEventListener("visibilitychange", function () {
-        document.hidden ? (document.title = "(oﾟvﾟ)ノ Hi", clearTimeout(st)) : (document.title =
-            "(*´∇｀*) 欢迎回来！", st = setTimeout(function () {
+        document.hidden ? (document.title = "≥Ö‿Ö≤ 网页崩溃了！", clearTimeout(st)) : (document.title =
+            "≥◔◡◔≤ 皮一下，很开心！", st = setTimeout(function () {
             document.title = OriginTitile
         }, 3e3))
     })
@@ -3652,5 +3665,8 @@
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
-</body>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":225,"height":380},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7}});</script></body>
 </html>

@@ -39,7 +39,11 @@
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
+
 <body>
+<!-- 深色模式按钮 -->
+<script> if (localStorage.getItem('dark') === '1') { document.body.classList.add('dark'); } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) { document.body.classList.add('dark'); } else if (matchMedia('(prefers-color-scheme: dark)').matches) { document.body.classList.add('dark'); } </script> <a onclick="switchNightMode()" id="sma"> <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i> </a>
+
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -494,21 +498,21 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2021-05-23
+                        2021-05-24
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.8k
+                        1.9k
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        7 分
                     </div>
                 
 
@@ -525,9 +529,9 @@
             <div id="articleContent">
                 <p><strong>写在前面</strong></p>
 <p>&emsp;&emsp;虽然博主关于怎么部署个人博客写的十分清除明白，但由于软件版本迭代等原因，实际操作可能出现各种问题。自己调试了好久，终于实现了这个博客主题，真的好开心，主题是的好看，感谢<a href="https://sitoi.cn/">博主</a>！特此记录操作过程。</p>
-<h1 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h1><p>&emsp;&emsp;主要安装<code>Node.js</code>、<code>Hexo</code>、<code>Git</code>和配置<code>Github SSH key</code>，及创建<code>Github Pages</code>页面。</p>
+<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><p>&emsp;&emsp;主要安装<code>Node.js</code>、<code>Hexo</code>、<code>Git</code>和配置<code>Github SSH key</code>，及创建<code>Github Pages</code>页面。</p>
 <p>&emsp;&emsp;具体操作请参考<a href="https://sitoi.cn/posts/6666.html">这篇博客</a></p>
-<h1 id="2-初始化Hexo项目"><a href="#2-初始化Hexo项目" class="headerlink" title="2. 初始化Hexo项目"></a>2. 初始化Hexo项目</h1><p>&emsp;&emsp;主要包括安装依赖包、本地启动博客、部署到<code>Github</code>。&emsp;具体操作请参考<a href="https://sitoi.cn/posts/27801.html">这篇博客</a>，主要命令如下：</p>
+<h2 id="2-初始化Hexo项目"><a href="#2-初始化Hexo项目" class="headerlink" title="2. 初始化Hexo项目"></a>2. 初始化Hexo项目</h2><p>&emsp;&emsp;主要包括安装依赖包、本地启动博客、部署到<code>Github</code>。&emsp;具体操作请参考<a href="https://sitoi.cn/posts/27801.html">这篇博客</a>，主要命令如下：</p>
 <pre><code># 初始化Hexo项目
 hexo init hexoblog
 # 切换到项目目录
@@ -561,7 +565,7 @@ hexo deploy
 git config --global --unset https.proxy
 </code></pre>
 <p>&emsp;&emsp;<strong>注意</strong>：如果设置完还出现上面错误，多试几次即可。</p>
-<h1 id="3-设置美美的主题"><a href="#3-设置美美的主题" class="headerlink" title="3. 设置美美的主题"></a>3. 设置美美的主题</h1><p>&emsp;&emsp;完成上面两步之后，你应该已经有一个<code>Hexo</code>博客了。接下来我们借助<code>matery</code>主题美化博客，这里使用<code>Sitoi</code>的<code>github</code>项目实现博客美化。</p>
+<h2 id="3-设置美美的主题"><a href="#3-设置美美的主题" class="headerlink" title="3. 设置美美的主题"></a>3. 设置美美的主题</h2><p>&emsp;&emsp;完成上面两步之后，你应该已经有一个<code>Hexo</code>博客了。接下来我们借助<code>matery</code>主题美化博客，这里使用<code>Sitoi</code>的<code>github</code>项目实现博客美化。</p>
 <ul>
 <li><strong>第一步</strong>：安装依赖包，在自己博客根目录依次执行下面命令</li>
 </ul>
@@ -587,6 +591,10 @@ npm i -S hexo-prism-plugin
 
 # 内容搜索插件
 npm install hexo-generator-search --save
+
+# （可选）看板娘插件和&quot;现有的&quot;模型安装https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md
+npm install --save hexo-helper-live2d
+npm install --save live2d-widget-model-epsilon2_1
 </code></pre>
 <ul>
 <li><strong>第二步</strong>：点击<a href="https://github.com/Sitoi/Sitoi-blog">这里</a>下载博客项目源码到本地</li>
@@ -606,7 +614,8 @@ npm install hexo-generator-search --save
 <ul>
 <li><strong>第五步</strong>：一些自己的设置</li>
 </ul>
-<h1 id="4-文章Front-matter介绍"><a href="#4-文章Front-matter介绍" class="headerlink" title="4. 文章Front-matter介绍"></a>4. 文章Front-matter介绍</h1><p>&emsp;&emsp;<code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
+<p>&emsp;&emsp;<code>Hexo</code><a href="https://zhuanlan.zhihu.com/p/69211731">博客美化合集</a></p>
+<h2 id="4-文章Front-matter介绍"><a href="#4-文章Front-matter介绍" class="headerlink" title="4. 文章Front-matter介绍"></a>4. 文章Front-matter介绍</h2><p>&emsp;&emsp;<code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
 <p>&emsp;&emsp;示例：</p>
 <pre class="line-numbers language-YAML"><code class="language-YAML">title: 基于 Hexo GitHub 从零开始搭建个人博客
 date: 2019-12-30 09:25:00
@@ -709,11 +718,13 @@ tags:
 <td>文章转载规则，可以是 <code>cc_by</code>,<code>cc_by_nd</code>,<code>cc_by_sa</code>,<code>cc_by_nc</code>,<code>cc_by_nc_nd</code>,<code>cc_by_nc_sa</code>,<code>cc0</code>,<code>noreprint</code> 或 <code>pay</code> 中的一个</td>
 </tr>
 </tbody></table>
-<h1 id="5-主题音频、视频部署方法"><a href="#5-主题音频、视频部署方法" class="headerlink" title="5.主题音频、视频部署方法"></a>5.主题音频、视频部署方法</h1><p><strong>方案一</strong>：</p>
+<h2 id="5-主题音频、视频部署方法"><a href="#5-主题音频、视频部署方法" class="headerlink" title="5.主题音频、视频部署方法"></a>5.主题音频、视频部署方法</h2><p><strong>方案一</strong>：</p>
 <p>&emsp;&emsp;将本地音频、视频上传到<a href="https://u.3w.cn/home">三维推</a>，在主页场景应用中有音频推广和视频推广，上传等待审核即可。</p>
 <p>&emsp;&emsp;审核通过之后，复制应用链接，到浏览器地址栏访问。<strong>对于视频</strong>，右键检查，你会找到<code>src=&quot;https://xxx.mp4&quot;</code>链接，把它复制到<code>config.yml</code>首页视频设置即可。<strong>对于音频</strong>，右键检查，你会找到<code>src=&quot;https://xxx.mp3&quot;</code>链接，复制链接到<code>source/data/musics.json</code>中，音频封面图可以在网易云等网站找到，或者自己随便指定音频封面。</p>
 <p><strong>方案二</strong>：</p>
 <p>&emsp;&emsp;白嫖在线视频剪辑<a href="https://www.kapwing.com/">kapwing</a>空间（需要登录），导出视频，音频，右键检查，找到<code>mp4</code>和<code>mp3</code>链接，进行相关部署即可。</p>
+<h2 id="6-配置直达评论和暗色切换功能"><a href="#6-配置直达评论和暗色切换功能" class="headerlink" title="6.配置直达评论和暗色切换功能"></a>6.配置直达评论和暗色切换功能</h2><p>&emsp;&emsp;直达评论：<a href="https://blog.csdn.net/cungudafa/article/details/106278206">参考博客</a></p>
+<p>&emsp;&emsp;暗色切换：<a href="https://nekodeng.gitee.io/posts/blog-night-mode.html#toc-heading-1">参考博客</a>。注意<code>深色模式按钮</code>放在<code>body</code>标签开始后，按钮的<code>js</code>代码追加到<code>/source/js/matery.js</code>末尾，按钮css样式和覆盖样式追加<code>/source/css/matery.css</code>末尾。</p>
 
             </div>
             <hr/>
@@ -1150,6 +1161,15 @@ tags:
         placeholder: '说点什么呗'
     });
 </script>
+
+<!-- ֱ������ -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="To comment">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+
     
 
     
@@ -1279,12 +1299,12 @@ tags:
                     
                         <div class="card-action article-tags">
                             
-                                <a href="/tags/hugo/">
-                                    <span class="chip bg-color">hugo</span>
-                                </a>
-                            
                                 <a href="/tags/hexo/">
                                     <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="/tags/hugo/">
+                                    <span class="chip bg-color">hugo</span>
                                 </a>
                             
                         </div>
@@ -1452,7 +1472,7 @@ tags:
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">71.4k</span>&nbsp;字
+                            class="white-color">71.5k</span>&nbsp;字
                 
                 
                     <span id="icp"><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/icp.2o22l1odsxm0.png" style="vertical-align: text-bottom;" alt="icp"/>
@@ -1620,8 +1640,8 @@ tags:
     var OriginTitile = document.title,
         st;
     document.addEventListener("visibilitychange", function () {
-        document.hidden ? (document.title = "(oﾟvﾟ)ノ Hi", clearTimeout(st)) : (document.title =
-            "(*´∇｀*) 欢迎回来！", st = setTimeout(function () {
+        document.hidden ? (document.title = "≥Ö‿Ö≤ 网页崩溃了！", clearTimeout(st)) : (document.title =
+            "≥◔◡◔≤ 皮一下，很开心！", st = setTimeout(function () {
             document.title = OriginTitile
         }, 3e3))
     })
@@ -1643,5 +1663,8 @@ tags:
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
-</body>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":225,"height":380},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7}});</script></body>
 </html>

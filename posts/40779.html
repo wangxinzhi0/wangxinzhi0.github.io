@@ -39,7 +39,11 @@
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
+
 <body>
+<!-- 深色模式按钮 -->
+<script> if (localStorage.getItem('dark') === '1') { document.body.classList.add('dark'); } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) { document.body.classList.add('dark'); } else if (matchMedia('(prefers-color-scheme: dark)').matches) { document.body.classList.add('dark'); } </script> <a onclick="switchNightMode()" id="sma"> <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i> </a>
+
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -462,12 +466,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hugo/">
-                                    <span class="chip bg-color">hugo</span>
-                                </a>
-                            
                                 <a href="/tags/hexo/">
                                     <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="/tags/hugo/">
+                                    <span class="chip bg-color">hugo</span>
                                 </a>
                             
                         </div>
@@ -498,7 +502,7 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2021-05-23
+                        2021-05-24
                     </div>
                 
 
@@ -527,12 +531,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-申请和配置个人域名"><a href="#1-申请和配置个人域名" class="headerlink" title="1.申请和配置个人域名"></a>1.申请和配置个人域名</h1><p>&emsp;&emsp;假定你已经部署了<code>xxx.github.io</code>的个人博客，想要配置<code>xxx.top</code>域名访问个人博客。</p>
+                <h2 id="1-申请和配置个人域名"><a href="#1-申请和配置个人域名" class="headerlink" title="1.申请和配置个人域名"></a>1.申请和配置个人域名</h2><p>&emsp;&emsp;假定你已经部署了<code>xxx.github.io</code>的个人博客，想要配置<code>xxx.top</code>域名访问个人博客。</p>
 <p>&emsp;&emsp;这里以<a href="https://console.dnspod.cn/domain">腾讯云</a>为例，新用户可以<code>1</code>元白嫖一年域名，特别注意：域名的续费价格！！！可能用便宜价格引你入坑，然后续费贼贵。<strong>注册要实名认证</strong>，可能要一段时间审核。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/blogbeauty/image.1ekwsdyv5328.png" alt="image"></p>
 <p>&emsp;&emsp;接下来，你需要给域名添加解析，<code>DNS</code>是默认就有的。你需要<code>ping</code>自己博客地址得到<code>IP</code>地址，手动添加两条<code>A</code>类型解析，主机记录分别为<code>@</code>和<code>www</code>。之后，你需要为添加的两条解析申请<code>SSL</code>证书（购买域名会送，本来也有免费的可以申请），按流程申请，然后将中间要添加的解析，复制到这里，注意是<code>TXT</code>类型。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/blogbeauty/image.5u53qm663x40.png" alt="image"></p>
-<h1 id="2-Github仓库关联域名"><a href="#2-Github仓库关联域名" class="headerlink" title="2.Github仓库关联域名"></a>2.Github仓库关联域名</h1><p>&emsp;&emsp;找到<code>xxx.github.io</code>仓库，点击设置，找到<code>Pages</code>，填写自己申请的域名，保存，忽略提醒。看看仓库是不是多了CNAME文件，内容为自己的域名。</p>
+<h2 id="2-Github仓库关联域名"><a href="#2-Github仓库关联域名" class="headerlink" title="2.Github仓库关联域名"></a>2.Github仓库关联域名</h2><p>&emsp;&emsp;找到<code>xxx.github.io</code>仓库，点击设置，找到<code>Pages</code>，填写自己申请的域名，保存，忽略提醒。看看仓库是不是多了CNAME文件，内容为自己的域名。</p>
 <p>&emsp;&emsp;好了，现在你可以通过<code>xxx.top</code>或<code>www.xxx.top</code>访问自己的博客了！</p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/blogbeauty/image.2iymstmvvi00.png" alt="image"></p>
 <ul>
@@ -551,12 +555,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hugo/">
-                                    <span class="chip bg-color">hugo</span>
-                                </a>
-                            
                                 <a href="/tags/hexo/">
                                     <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="/tags/hugo/">
+                                    <span class="chip bg-color">hugo</span>
                                 </a>
                             
                         </div>
@@ -978,6 +982,15 @@
         placeholder: '说点什么呗'
     });
 </script>
+
+<!-- ֱ������ -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="To comment">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+
     
 
     
@@ -1274,7 +1287,7 @@
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">71.4k</span>&nbsp;字
+                            class="white-color">71.5k</span>&nbsp;字
                 
                 
                     <span id="icp"><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/icp.2o22l1odsxm0.png" style="vertical-align: text-bottom;" alt="icp"/>
@@ -1442,8 +1455,8 @@
     var OriginTitile = document.title,
         st;
     document.addEventListener("visibilitychange", function () {
-        document.hidden ? (document.title = "(oﾟvﾟ)ノ Hi", clearTimeout(st)) : (document.title =
-            "(*´∇｀*) 欢迎回来！", st = setTimeout(function () {
+        document.hidden ? (document.title = "≥Ö‿Ö≤ 网页崩溃了！", clearTimeout(st)) : (document.title =
+            "≥◔◡◔≤ 皮一下，很开心！", st = setTimeout(function () {
             document.title = OriginTitile
         }, 3e3))
     })
@@ -1465,5 +1478,8 @@
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
-</body>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":225,"height":380},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7}});</script></body>
 </html>
