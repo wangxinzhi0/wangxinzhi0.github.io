@@ -502,21 +502,21 @@
                 
                     <div class="post-date info-break-policy">
                         <i class="fa fa-calendar-check-o fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2021-05-24
+                        2021-05-25
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        31.3k
+                        33.5k
                     </div>
                 
 
                 
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        127 分
+                        136 分
                     </div>
                 
 
@@ -3213,11 +3213,96 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
 <li>时间复杂度：O(n<sup>2</sup>)，<code>n</code>代表<code>BST</code>节点个数。</li>
 <li>空间复杂度：O(n)，需要O(n)的空间存储<code>0-n</code>个节点可以构建<code>BST</code>数。</li>
 </ul>
-<h2 id="0098-验证二叉搜索树"><a href="#0098-验证二叉搜索树" class="headerlink" title="0098. 验证二叉搜索树"></a>0098. 验证二叉搜索树</h2><p><strong>题目地址</strong>:</p>
-<p><strong>方法一</strong>：</p>
+<h2 id="0098-验证二叉搜索树"><a href="#0098-验证二叉搜索树" class="headerlink" title="0098. 验证二叉搜索树"></a>0098. 验证二叉搜索树</h2><p><strong>题目地址</strong>:<a href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/medium/98.validate-binary-search-tree">https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/medium/98.validate-binary-search-tree</a></p>
+<p><strong>方法一</strong>：递归</p>
 <p><strong>思路及算法</strong></p>
+<p>根据题目<strong>二叉搜索树</strong>的性质，我们设计一个递归函数<code>helper(root, lower, upper)</code>来递归判断，函数表示考虑以<code>root</code>为根的子树，判断子树中所有节点的值是否都在<code>(l,r)</code>的范围内（注意是开区间）。如果<code>root</code>节点的值<code>val</code>不在<code>(l,r)</code>范围内说明不满足条件直接返回，负责我们要继续递归调用检测它的左右子树是否满足，如果都满足说明这是一颗二叉搜索树。</p>
+<p>递归调用左子树，改变上界，<code>helper(root.left, lower, root.val)</code>。递归调用右子树，改变下界，<code>helper(root.right, root.val, upper)</code></p>
+<p>函数递归的入口为<code>helper(root, -inf, +inf)</code>，<code>inf</code>表示一个无穷大的值。</p>
 <p><strong>代码</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//递归</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isValidBST</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//调用递归</span>
+        <span class="token keyword">return</span> <span class="token function">helper</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> Long<span class="token punctuation">.</span>MIN_VALUE<span class="token punctuation">,</span> Long<span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">helper</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">,</span> <span class="token keyword">long</span> lower<span class="token punctuation">,</span> <span class="token keyword">long</span> upper<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//边界条件，返回true</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">==</span>null<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//判断条件，返回false。不能用返回true的条件，两个true会出问题</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token operator">>=</span>upper <span class="token operator">||</span> root<span class="token punctuation">.</span>val<span class="token operator">&lt;=</span>lower<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">helper</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> lower<span class="token punctuation">,</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">helper</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> root<span class="token punctuation">.</span>val<span class="token punctuation">,</span> upper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：O(n)，<code>n</code>为二叉树的节点个数。</li>
+<li>空间复杂度：O(h)，<code>h</code>为二叉树的高度。</li>
+</ul>
+<p><strong>方法二</strong>：中序遍历</p>
+<p><strong>思路及算法</strong></p>
+<p>二叉搜索树中序遍历是升序的，这启示我们在中序遍历时实时检查当前节点的值是否大于前一个中序遍历到的节点的值即可。</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//中序遍历迭代</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isValidBST</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//存储中序遍历前一个值</span>
+        <span class="token keyword">long</span> pre <span class="token operator">=</span> Long<span class="token punctuation">.</span>MIN_VALUE<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//辅助遍历栈</span>
+        Deque<span class="token operator">&lt;</span>TreeNode<span class="token operator">></span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>root <span class="token operator">!=</span> null <span class="token operator">||</span> <span class="token operator">!</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//向左遍历</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                root <span class="token operator">=</span> root<span class="token punctuation">.</span>left<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//判断条件</span>
+                root <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  <span class="token comment" spellcheck="true">// 如果中序遍历得到的节点的值小于等于前一个 pre，说明不是二叉搜索树</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">&lt;=</span> pre<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                pre <span class="token operator">=</span> root<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//向右遍历</span>
+                root <span class="token operator">=</span> root<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//中序遍历递归</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//存储中序遍历前一个值</span>
+    <span class="token keyword">long</span> pre <span class="token operator">=</span> Long<span class="token punctuation">.</span>MIN_VALUE<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isValidBST</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//调用递归</span>
+        <span class="token keyword">return</span> <span class="token function">inorder</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">inorder</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//边界条件</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">==</span>null<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//向左递归</span>
+        <span class="token keyword">boolean</span> left <span class="token operator">=</span> <span class="token function">inorder</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//判断条件</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pre<span class="token operator">>=</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        pre <span class="token operator">=</span> root<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//向右递归</span>
+        <span class="token keyword">boolean</span> right <span class="token operator">=</span> <span class="token function">inorder</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> left <span class="token operator">&amp;&amp;</span> right<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：O(n)，其中<code>n</code>为二叉树的节点数。</li>
+<li>空间复杂度：O(h)，<code>h</code>为二叉树的高度，栈最多存储<code>h</code>个节点。</li>
+</ul>
 <h2 id="0102-二叉树的层序遍历"><a href="#0102-二叉树的层序遍历" class="headerlink" title="0102. 二叉树的层序遍历"></a>0102. 二叉树的层序遍历</h2><p><strong>0144前序遍历题目地址</strong>:<a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">https://leetcode-cn.com/problems/binary-tree-preorder-traversal/</a></p>
 <p><strong>0094中序遍历题目地址</strong>:<a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">https://leetcode-cn.com/problems/binary-tree-inorder-traversal/</a></p>
 <p><strong>0145后序遍历题目地址</strong>：<a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">https://leetcode-cn.com/problems/binary-tree-postorder-traversal/</a></p>
@@ -3286,7 +3371,204 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
 <li>时间复杂度：O(n)，每个节点出入队各一次，渐进时间复杂度为O(n)。</li>
 <li>空间复杂度：O(n)，队列中元素个数不超过<code>n</code>，渐进空间复杂度为O(n)。</li>
 </ul>
-<h2 id="0103-二叉树的锯齿形层次遍历"><a href="#0103-二叉树的锯齿形层次遍历" class="headerlink" title="0103. 二叉树的锯齿形层次遍历"></a>0103. 二叉树的锯齿形层次遍历</h2><h2 id="0113-路径总和-II"><a href="#0113-路径总和-II" class="headerlink" title="0113. 路径总和 II"></a>0113. 路径总和 II</h2><h2 id="0129-求根到叶子节点数字之和"><a href="#0129-求根到叶子节点数字之和" class="headerlink" title="0129. 求根到叶子节点数字之和"></a>0129. 求根到叶子节点数字之和</h2><h2 id="0130-被围绕的区域"><a href="#0130-被围绕的区域" class="headerlink" title="0130. 被围绕的区域"></a>0130. 被围绕的区域</h2><h2 id="0131-分割回文串"><a href="#0131-分割回文串" class="headerlink" title="0131. 分割回文串"></a>0131. 分割回文串</h2><h2 id="0139-单词拆分"><a href="#0139-单词拆分" class="headerlink" title="0139. 单词拆分"></a>0139. 单词拆分</h2><h2 id="0144-二叉树的前序遍历"><a href="#0144-二叉树的前序遍历" class="headerlink" title="0144. 二叉树的前序遍历"></a>0144. 二叉树的前序遍历</h2><p><strong>0144前序遍历题目地址</strong>:<a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">https://leetcode-cn.com/problems/binary-tree-preorder-traversal/</a></p>
+<h2 id="0103-二叉树的锯齿形层次遍历"><a href="#0103-二叉树的锯齿形层次遍历" class="headerlink" title="0103. 二叉树的锯齿形层次遍历"></a>0103. 二叉树的锯齿形层次遍历</h2><p><strong>题目地址</strong>:<a href="https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/">https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/</a></p>
+<p><strong>方法一</strong>：广度优先遍历</p>
+<p><strong>思路及算法</strong></p>
+<p>此题是<a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">0102二叉树层序遍历</a>的变种，最后输出的要求有所变化，我们按照<strong>层数的奇偶</strong>（<strong>使用一个布尔变量</strong>）来决定每一层的输出顺序，<strong>只需要改变加入结果集合的顺序即可</strong>！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/LeetCode-medium/0103-1.32gojhrci4o0.png" alt="0103-1"></p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//BFS</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>Integer<span class="token operator">>></span> <span class="token function">zigzagLevelOrder</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//结果集合</span>
+        List<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>Integer<span class="token operator">>></span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//队列</span>
+        Deque<span class="token operator">&lt;</span>TreeNode<span class="token operator">></span> deque <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//二叉树的奇偶层，根据奇偶决定结果添加顺序</span>
+        <span class="token keyword">boolean</span> isOrderLeft <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//首先加入根节点</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">!=</span>null<span class="token punctuation">)</span> deque<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>deque<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            LinkedList<span class="token operator">&lt;</span>Integer<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> curSize <span class="token operator">=</span> deque<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//遍历当前层</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>curSize<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                TreeNode node <span class="token operator">=</span> deque<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//奇数层，从左往右添加</span>
+                    list<span class="token punctuation">.</span><span class="token function">offerLast</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//偶数层，从右往左添加</span>
+                    list<span class="token punctuation">.</span><span class="token function">offerFirst</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token operator">!=</span>null<span class="token punctuation">)</span> deque<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token operator">!=</span>null<span class="token punctuation">)</span> deque<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            res<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//奇偶切换</span>
+            flag <span class="token operator">=</span> <span class="token operator">!</span>flag<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：O(n)，n为二叉树的节点数，每个节点会且仅会遍历一次。</li>
+<li>空间复杂度：O(n)，我们需要维护存储节点的队列和存储节点值的双端队列。</li>
+</ul>
+<h2 id="0113-路径总和-II"><a href="#0113-路径总和-II" class="headerlink" title="0113. 路径总和 II"></a>0113. 路径总和 II</h2><p><strong>题目地址</strong>:<a href="https://leetcode-cn.com/problems/path-sum-ii/">https://leetcode-cn.com/problems/path-sum-ii/</a></p>
+<p><strong>方法一</strong>：回溯</p>
+<p><strong>思路及算法</strong></p>
+<p>注意本题的要求是，找到所有满足从根节点到某个叶子结点经过的路径上的节点之和等于目标和的路径。核心思想是对树进行一次遍历，在遍历的时候记录从根节点到当前节点的路径和，以防止重复计算。</p>
+<p>我们可以采用深度优先搜索的方式，枚举每一条从根节点到叶子结点的路径。当我们遍历到叶子节点，且此时路径和恰为目标和时，我们就找到了一条满足条件的路径。</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 深度优先遍历</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//结果集</span>
+    List<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>Integer<span class="token operator">>></span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//拼接路径</span>
+    List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> path <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>Integer<span class="token operator">>></span> <span class="token function">pathSum</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">,</span> <span class="token keyword">int</span> targetSum<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//调用递归</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//返回结果</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">,</span> <span class="token keyword">int</span> sum<span class="token punctuation">,</span> <span class="token keyword">int</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//边界条件</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//选择节点</span>
+        sum <span class="token operator">+=</span> root<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+        path<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//叶子结点且路径总和等于给定目标，不用加return</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token operator">==</span>null <span class="token operator">&amp;&amp;</span> root<span class="token punctuation">.</span>right<span class="token operator">==</span>null <span class="token operator">&amp;&amp;</span> targetSum<span class="token operator">==</span>sum<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">//向左深度搜索</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> sum<span class="token punctuation">,</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//向右深度搜索</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> sum<span class="token punctuation">,</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//撤销选择</span>
+        path<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：O(n<sup>2</sup>)，其中n是树的节点数。</li>
+<li>空间复杂度：O(n)，空间复杂度主要取决于栈空间的开销，栈中元素的个数不会超过树的节点数。</li>
+</ul>
+<h2 id="0129-求根到叶子节点数字之和"><a href="#0129-求根到叶子节点数字之和" class="headerlink" title="0129. 求根到叶子节点数字之和"></a>0129. 求根到叶子节点数字之和</h2><p><strong>题目地址</strong>:<a href="https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/">https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/</a></p>
+<p><strong>方法一</strong>：深度优先搜索</p>
+<p><strong>思路及算法</strong></p>
+<p>根据题意，每个节点都对应一个数字，等于父节点对应数字乘以<code>10</code>再加上该节点的值。</p>
+<p>深度优先搜索时很直观的做法。从根节点开始，遍历每个节点：</p>
+<ul>
+<li>如果遇到叶子节点，则将叶子结点对应的数字加到数字之和。</li>
+<li>如果当前节点不是叶子节点，则计算其子节点对应的数字，然后对子节点递归遍历。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/LeetCode-medium/0129-1.1o3yjdbrshuo.png" alt="0129-1"></p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//深度优先遍历</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">sumNumbers</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//调用递归</span>
+        <span class="token keyword">return</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">dfs</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">,</span> <span class="token keyword">int</span> preSum<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//边界条件</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">==</span>null<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//当前节点对应数字</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> preSum<span class="token operator">*</span><span class="token number">10</span> <span class="token operator">+</span> root<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//当前节点是叶子节点，返回sum</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token operator">==</span>null <span class="token operator">&amp;&amp;</span> root<span class="token punctuation">.</span>right<span class="token operator">==</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//当前节点非叶子结点，深度优先计算其左右子节点对应数字之和</span>
+            <span class="token keyword">return</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> sum<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：O(n)，其中n为二叉树的节点个数。对每个节点访问一次。</li>
+<li>空间复杂度：O(h)，取决于递归调用栈空间，递归栈的深度等于二叉树的高度。</li>
+</ul>
+<p><strong>方法二</strong>：广度优先搜索</p>
+<p><strong>思路及算法</strong></p>
+<p>使用广度优先搜索，<strong>需要维护两个队列，分别存储节点和节点对应的数字</strong>。</p>
+<p>初始时，将根节点和根节点对应的值放入两个队列。每次从两个队列分别取出一个节点和一个数字，进行如下操作：</p>
+<ul>
+<li>如果当前节点是叶子节点，则将该节点对应的数字加到数字之和；</li>
+<li>如果当前节点不是叶子节点，则获得当前节点的非空子节点，并根据当前节点对应的数字和子节点的值计算子节点对应的数字，然后将子节点和子节点对应的数字分别加入两个队列。</li>
+</ul>
+<p>搜索结束后，即可得到所有叶子结点对应的数字之和。</p>
+<p><strong>代码</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//广度优先遍历</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">sumNumbers</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//结果</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//广度优先遍历辅助节点队列</span>
+        Deque<span class="token operator">&lt;</span>TreeNode<span class="token operator">></span> nodeList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//广度优先遍历辅助数队列，记录根节点到当前节点的数值</span>
+        Deque<span class="token operator">&lt;</span>Integer<span class="token operator">></span> numList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token comment" spellcheck="true">//如果根节点不为空，先将根节点和root.val加入队列</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token operator">!=</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            nodeList<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            numList<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>nodeList<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//取出一个节点队列和数队列元素</span>
+            TreeNode node <span class="token operator">=</span> nodeList<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> num <span class="token operator">=</span> numList<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//如果取出节点是叶子节点，将对应数值加到最终结果</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token operator">==</span>null <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>right<span class="token operator">==</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                sum <span class="token operator">+=</span> num<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//否则，如果左节点不为空，节点和运算后的数入队列</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token operator">!=</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    nodeList<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    numList<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>num<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>node<span class="token punctuation">.</span>left<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token comment" spellcheck="true">//如果左节点不为空，节点和运算后的数入队列</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token operator">!=</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    nodeList<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    numList<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>num<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>node<span class="token punctuation">.</span>right<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//返回结果</span>
+        <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：O(n)，访问每个节点一次。</li>
+<li>空间复杂度：O(n)，取决于队列，每个队列中的元素个数不会超过n。</li>
+</ul>
+<h2 id="0130-被围绕的区域"><a href="#0130-被围绕的区域" class="headerlink" title="0130. 被围绕的区域"></a>0130. 被围绕的区域</h2><p><strong>题目地址</strong>:</p>
+<p><strong>方法一</strong>：</p>
+<p><strong>思路及算法</strong></p>
+<p><strong>代码</strong></p>
+<p><strong>复杂度分析</strong></p>
+<h2 id="0131-分割回文串"><a href="#0131-分割回文串" class="headerlink" title="0131. 分割回文串"></a>0131. 分割回文串</h2><p><strong>题目地址</strong>:</p>
+<p><strong>方法一</strong>：</p>
+<p><strong>思路及算法</strong></p>
+<p><strong>代码</strong></p>
+<p><strong>复杂度分析</strong></p>
+<h2 id="0139-单词拆分"><a href="#0139-单词拆分" class="headerlink" title="0139. 单词拆分"></a>0139. 单词拆分</h2><p><strong>题目地址</strong>:</p>
+<p><strong>方法一</strong>：</p>
+<p><strong>思路及算法</strong></p>
+<p><strong>代码</strong></p>
+<p><strong>复杂度分析</strong></p>
+<h2 id="0144-二叉树的前序遍历"><a href="#0144-二叉树的前序遍历" class="headerlink" title="0144. 二叉树的前序遍历"></a>0144. 二叉树的前序遍历</h2><p><strong>0144前序遍历题目地址</strong>:<a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">https://leetcode-cn.com/problems/binary-tree-preorder-traversal/</a></p>
 <p><strong>0094中序遍历题目地址</strong>:<a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">https://leetcode-cn.com/problems/binary-tree-inorder-traversal/</a></p>
 <p><strong>0145后序遍历题目地址</strong>：<a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">https://leetcode-cn.com/problems/binary-tree-postorder-traversal/</a></p>
 <p><strong>0102层序遍历题目地址</strong>:<a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">https://leetcode-cn.com/problems/binary-tree-level-order-traversal/</a></p>
@@ -4060,7 +4342,7 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">71.5k</span>&nbsp;字
+                            class="white-color">73.8k</span>&nbsp;字
                 
                 
                     <span id="icp"><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/icp.2o22l1odsxm0.png" style="vertical-align: text-bottom;" alt="icp"/>
@@ -4254,5 +4536,5 @@ node2<span class="token punctuation">.</span>next <span class="token operator">=
 <!-- 雪花特效 -->
 <script type="text/javascript" src="\js\snow.js"></script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":225,"height":380},"mobile":{"show":false,"scale":0.5},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left"},"mobile":{"show":false,"scale":0.5},"react":{"opacity":1}});</script></body>
 </html>
