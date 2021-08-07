@@ -1,0 +1,1734 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="hugo博客搭建, ���˲���">
+    <meta name="description" content="���˲�����Ŀ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>hugo博客搭建 | ־������</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.iohttps://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/logo.1spkqairezog.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="־������" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+
+    <!-- 深色模式按钮 -->
+    <script> if (localStorage.getItem('dark') === '1') { document.body.classList.add('dark'); } 
+    <!-- 根据自动暗色（默认关闭）：else if (new Date().getHours() >= 22 || new Date().getHours() < 7) { document.body.classList.add('dark'); }  -->
+    else if (matchMedia('(prefers-color-scheme: dark)').matches) { document.body.classList.add('dark'); } 
+    </script> 
+    <a onclick="switchNightMode()" id="sma"> <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i> </a>
+
+    <!-- 雪花特效 -->
+    <script type="text/javascript" src="\js\snow.js"></script>
+    
+    <script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "≥Ö‿Ö≤ 网页崩溃了！", clearTimeout(st)) : (document.title =
+            "≥◔◡◔≤ 皮一下，很开心！", st = setTimeout(function () {
+            document.title = OriginTitile
+        }, 3e3))
+    })
+    </script>
+    
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.iohttps://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/logo.1spkqairezog.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">־������</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.iohttps://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/logo.1spkqairezog.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">־������</div>
+        <div class="logo-desc">
+            
+            ���˲�����Ŀ
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/8.66pckd4d60o0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">hugo博客搭建</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/hugo/">
+                                <span class="chip bg-color">hugo</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-category">
+                                个人博客
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-10-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-08-04
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    14 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><h3 id="1-1-注册Github"><a href="#1-1-注册Github" class="headerlink" title="1.1 注册Github"></a>1.1 注册Github</h3><ul>
+<li>在<code>Github</code>官网进行注册，注意要验证邮箱后方能使用，如果接收不到邮件，请设置邮箱白名单。</li>
+</ul>
+<h3 id="1-2-Git安装与配置"><a href="#1-2-Git安装与配置" class="headerlink" title="1.2 Git安装与配置"></a>1.2 Git安装与配置</h3><ul>
+<li>各种操作系统（<code>OS</code>）安装包下载：<code>https://git-scm.com/</code></li>
+<li><code>win</code> 安装除了安装目录其余选项默认即可，桌面右键出现Git <code>GUI Here</code>和<code>Git Bash Here</code>表示安装成功，如下图所示。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/createblog/1.6k0ytgz22cw0.png" alt="1"></p>
+<ul>
+<li><code>Git</code>基本信息设置，在桌面右键，选择<code>Git Bash Here</code>，依次运行如下命令设置用户名和邮箱</li>
+</ul>
+<pre><code>git config --global user.name &#39;your name&#39;  //设置为github用户名
+git config --global user.email &#39;your email&#39;  //设置github邮箱
+git config --list  //查看设置结果
+</code></pre>
+<ul>
+<li>运行如下命令，按几次<code>Enter</code>结束运行，会自动的在用户目录<code>C:\Users\WXZ\</code>生成一个<code>“.ssh”</code>的目录，里面会保存有两个文件：私钥（<code>id_rsa</code>）、公钥（<code>id_rsa.pub</code>）</li>
+</ul>
+<pre><code>ssh-keygen -t rsa -C &quot;your email&quot;
+</code></pre>
+<ul>
+<li>打开<code>github</code>主页，点击右上角头像，选择<code>settings</code>，将公钥内容复制到<code>SSH</code>，名称随意设置，如下图</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/createblog/2.5mph8dk19a00.png" alt="2"></p>
+<h3 id="1-3-Hugo安装与配置"><a href="#1-3-Hugo安装与配置" class="headerlink" title="1.3 Hugo安装与配置"></a>1.3 Hugo安装与配置</h3><ul>
+<li><code>win</code>平台到框架下载地址：<code>https://github.com/gohugoio/hugo/releases</code>，找到<code>hugo_0.78.0_Windows-64bit.zip</code>或<code>hugo_extended_0.83.1_Windows-64bit.zip</code>（功能更全，<strong>推荐</strong>）p)下载，解压到指定路径并添加到用户变量<code>Path</code>中（如果下面操作有问题就重启一下）</li>
+<li><code>win+R</code>打开<code>cmd</code>输入<code>hugo version</code>，出现下图表示安装成功。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/createblog/3.197izlj9gt28.png" alt="3"></p>
+<p> 恭喜你完成了所有准备工作！！！</p>
+<h2 id="2-Hugo本地个人博客生成"><a href="#2-Hugo本地个人博客生成" class="headerlink" title="2. Hugo本地个人博客生成"></a>2. Hugo本地个人博客生成</h2><h3 id="2-1-生成个人博客并设置主题"><a href="#2-1-生成个人博客并设置主题" class="headerlink" title="2.1 生成个人博客并设置主题"></a>2.1 生成个人博客并设置主题</h3><ul>
+<li>在指定目录（可以是<code>Hugo</code>目录）右键<code>Git Bash Here</code>输入如下命令，会新建博客根目录</li>
+</ul>
+<pre><code>hugo new site myblog(自定义博客根目录名称)
+</code></pre>
+<ul>
+<li>切换到根目录下(<code>myblog</code>)，<a target="_blank" rel="noopener" href="https://themes.gohugo.io/">选择Hugo主题下载</a>，以<code>npq</code>为例，执行如下命令。推荐使用<code>even</code>主题<code>https://github.com/olOwOlo/hugo-theme-even</code></li>
+</ul>
+<pre><code>git clone https://github.com/ahmedsaadxyzz/npq-hugo.git
+</code></pre>
+<ul>
+<li>将文件移动到<code>./myblog/themes</code>目录下，修改名字为<code>npq</code>，将<code>npq\exampleSite</code>目录下的<code>config.toml</code>复制到<code>myblog</code>根目录，打开第5行修改为<code>theme=&quot;npq&quot;</code>，修改<code>themesdir = &quot;../myblog/themes&quot;</code></li>
+<li><code>/themes/npq/static</code>文件夹下放置<code>avatar.png</code>作为个人博客的头像</li>
+</ul>
+<hr>
+<h3 id="2-2-本地启动个人博客"><a href="#2-2-本地启动个人博客" class="headerlink" title="2.2 本地启动个人博客"></a>2.2 本地启动个人博客</h3><ul>
+<li>在<code>myblog</code>根目录下，输入下面命令在本地启动个人博客，效果图如下</li>
+<li>注意：在<code>myblog</code>目录下的<code>config.toml</code>设置好，<code>theme、buildDrafts</code>后，直接输入<code>hugo server</code>即可在本地启动个人博客。</li>
+</ul>
+<pre><code>hugo server -t npq --buildDrafts
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/createblog/4.1h24afipfc5c.png" alt="4"></p>
+<ul>
+<li>复制<code>http://localhost:1313/</code>，到浏览器中，查看站点是否运行成功</li>
+</ul>
+<hr>
+<h3 id="2-3-实际写一篇文章在本地启动"><a href="#2-3-实际写一篇文章在本地启动" class="headerlink" title="2.3 实际写一篇文章在本地启动"></a>2.3 实际写一篇文章在本地启动</h3><ul>
+<li>切换到<code>myblog</code>根目录，输入如下命令，会在<code>myblog/content/post</code>路径下生成<code>markdown</code>文件，最好不要修改生成时已有内容，用<code>vs code</code>、<code>Typora</code>（强烈推荐，即时渲染<code>markdown</code>）或其他编辑器写<code>markdown</code>博客。</li>
+</ul>
+<pre><code>hugo new post/blog.md //自定义md文件名
+</code></pre>
+<ul>
+<li>切换到<code>myblog</code>根目录，输入如下命令，复制<code>http://localhost:1313/</code>，查看本地博客内容,如下图所示。每次修改<code>blog.md</code>都有运行下面的命令更新内容。</li>
+</ul>
+<pre><code>hugo server -t npq --buildDrafts
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/createblog/5.6s3j8ntkg040.png" alt="5"></p>
+<p>恭喜你完成了本地个人博客生成！</p>
+<hr>
+<h2 id="3-将个人博客部署到远端"><a href="#3-将个人博客部署到远端" class="headerlink" title="3 将个人博客部署到远端"></a>3 将个人博客部署到远端</h2><ul>
+<li>上面的一系列操作，得到的博客网站的站点只能在自己的电脑上本地访问，要想别人能访问你的博客网站，必须将个人博客部署到远端服务器，这里以<code>Github</code>为例，而且仍然给出<code>gitee</code>的命令。</li>
+<li>在<code>GitHub</code>上创建新仓库，命名必须是你<code>github</code>的昵称且必须小写再加上<code>.github.io</code>，例如<code>wangxinzhi0.github.io</code>。<code>Gitee</code>的话，仓库路径为<code>gitee</code>名称，如<code>wangxinzhi0</code>，注意仓库开源！</li>
+<li>在<code>myblog</code>根目录下输入如下命令，配置远端地址</li>
+<li><strong>注意</strong>：在<code>myblog</code>目录下的<code>config.toml</code>设置好，<code>theme、baseUrl、buildDrafts</code>后，直接输入<code>hugo</code>即可完成部署到远端的文件生成。</li>
+</ul>
+<pre><code>hugo --theme=even --baseUrl=&quot;https://wangxinzhi0.github.io/&quot; --buildDrafts//配置github时
+hugo --theme=even --baseUrl=&quot;https://wangxinzhi0.gitee.io/&quot; --buildDrafts//配置gitee时
+</code></pre>
+<ul>
+<li>然后会在<code>myblog</code>根目录下生成<code>public</code>文件夹，切换到<code>public</code>文件夹下，一次输入如下命令将博客推送到远端仓库</li>
+</ul>
+<pre><code>git init //初始化(只需要初始化一次)
+git add . //提交全部文件
+git commit -m &quot;我的Hugo博客首次提交&quot; //提交注释
+git remote add github git@github.com:wangxinzhi0/wangxinzhi0.github.io.git  // 设置远端仓库1（只需要设置一次）
+git remote add gitee git@gitee.com:wangxinzhi0/blog.git//设置远端仓库2
+git push -u github master //推送到远端库1
+git push -u gitee master //推送到远端库2
+</code></pre>
+<ul>
+<li>最后，在浏览器中输入<code>wangxinzhi0.github.io</code>，即可访问自己的博客网站。</li>
+<li>或者<code>wangxinzhi0.gitee.io</code>，注意需要在仓库的服务中开启Pages服务。</li>
+</ul>
+<p>已将博客部署到远端，享受吧！！！</p>
+<h2 id="4-常见推送问题"><a href="#4-常见推送问题" class="headerlink" title="4.常见推送问题"></a>4.常见推送问题</h2><ul>
+<li><code>! [rejected]    master -&gt; master (fetch first)</code>：远端库的文件和本地库没有，先pull到本地，后<code>push</code></li>
+</ul>
+<pre><code>git pull --rebase origin master
+git rebase --abort //出现(master|REBASE 1/1)，回到master
+git push origin master
+</code></pre>
+<ul>
+<li><code>! [rejected]    master -&gt; master(non-fast-forward)</code></li>
+</ul>
+<pre><code>git pull origin master --allow-unrelated-histories //把远端仓库和本地同步，消除差异
+重新add和commit文件
+git push -u origin master
+</code></pre>
+<ul>
+<li> <code>(master|MERGING)</code></li>
+</ul>
+<pre><code>git reset --hard head//回退版本信息
+</code></pre>
+<p>&emsp;&emsp;如果实在无法解决冲突就直接删除<code>public</code>和远端仓库，重新生成public和创建<code>github</code>仓库，并推送到<code>github</code>！</p>
+<h2 id="5-添加搜索功能"><a href="#5-添加搜索功能" class="headerlink" title="5.添加搜索功能"></a>5.添加搜索功能</h2><p>&emsp;&emsp;依靠主题<code>hugo-search-fuse-js</code>：<a target="_blank" rel="noopener" href="https://github.com/kaushalmodi/hugo-search-fuse-js">https://github.com/kaushalmodi/hugo-search-fuse-js</a></p>
+<p>&emsp;&emsp;1. 克隆该主题到<code>./myblog/themes</code>文件夹，修改<code>./myblog/config.toml</code>文件的<code>theme=[&quot;hugo-search-fuse-js&quot;, &quot;even&quot;]</code></p>
+<p>&emsp;&emsp;2. 在<code>./myblog/content</code>文件夹下创建<code>search.md</code>文件，一个例子内容如下</p>
+<pre><code>+++
+title = &quot;Search🔍&quot;
+layout = &quot;search&quot;
+outputs = [&quot;html&quot;, &quot;json&quot;]
+[sitemap]
+  priority = 0.1
++++
+</code></pre>
+<p>&emsp;&emsp;3. 修改主主题<code>even</code>的<code>baseof.html</code>文件，在<code>./myblog/themes/even/layouts/_default/baseof.html</code>处，一种可能的例子修改内容如下</p>
+<pre><code>&#123;&#123; if ne .Site.Params.version "4.x" -&#125;&#125;
+ &#123;&#123; errorf "\n\nThere are two possible situations that led to this error:\n  1. You haven't copied the config.toml yet. See https://github.com/olOwOlo/hugo-theme-even#installation \n  2. You have an incompatible update. See https://github.com/olOwOlo/hugo-theme-even/blob/master/CHANGELOG.md#400-2018-11-06 \n\n有两种可能的情况会导致这个错误发生:\n  1. 你还没有复制 config.toml 参考 https://github.com/olOwOlo/hugo-theme-even/blob/master/README-zh.md#installation \n  2. 你进行了一次不兼容的更新 参考 https://github.com/olOwOlo/hugo-theme-even/blob/master/CHANGELOG.md#400-2018-11-06 \n" -&#125;&#125;
+&#123;&#123; end -&#125;&#125;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;&#123;&#123; .Site.Language &#125;&#125;&quot;&gt;
+&lt;head&gt;
+ &lt;meta charset=&quot;utf-8&quot;&gt;
+ &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+ &lt;title&gt;
+   &#123;&#123;- block "title" . -&#125;&#125;
+     &#123;&#123; if .IsPage &#125;&#125;&#123;&#123; .Title &#125;&#125; - &#123;&#123; .Site.Title &#125;&#125;&#123;&#123; else &#125;&#125;&#123;&#123; .Site.Title &#125;&#125;&#123;&#123; end &#125;&#125;
+   &#123;&#123;- end -&#125;&#125;
+ &lt;/title&gt;
+ &#123;&#123; partial "head.html" . &#125;&#125;
+&lt;/head&gt;
+&lt;body&gt;
+ &#123;&#123; partial "slideout.html" . &#125;&#125;
+ &lt;div class=&quot;container&quot; id=&quot;mobile-panel&quot;&gt;
+   &#123;&#123; if not .Params.hideHeaderAndFooter -&#125;&#125;
+   &lt;header id=&quot;header&quot; class=&quot;header&quot;&gt;
+       &#123;&#123; partial "header.html" . &#125;&#125;
+   &lt;/header&gt;
+   &#123;&#123;- end &#125;&#125;
+
+   &#123;&#123; block "main" .  &#125;&#125;
+   &lt;main id=&quot;main&quot; class=&quot;main&quot;&gt;
+     &lt;div class=&quot;content-wrapper&quot;&gt;
+       &lt;div id=&quot;content&quot; class=&quot;content&quot;&gt;
+         &#123;&#123; block "content" . &#125;&#125;&#123;&#123; end &#125;&#125;
+       &lt;/div&gt;
+       &#123;&#123; partial "comments.html" . &#125;&#125;
+     &lt;/div&gt;
+   &lt;/main&gt;
+   &#123;&#123; end &#125;&#125;
+
+   &#123;&#123; if not .Params.hideHeaderAndFooter -&#125;&#125;
+   &#123;&#123; block "footer" .  &#125;&#125;
+   &lt;footer id=&quot;footer&quot; class=&quot;footer&quot;&gt;
+     &#123;&#123; partial "footer.html" . &#125;&#125;
+   &lt;/footer&gt;
+   &#123;&#123; end &#125;&#125;
+   &#123;&#123;- end &#125;&#125;
+
+   &lt;div class=&quot;back-to-top&quot; id=&quot;back-to-top&quot;&gt;
+     &lt;i class=&quot;iconfont icon-up&quot;&gt;&lt;/i&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+ &#123;&#123; partial "scripts.html" . &#125;&#125;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>&emsp;&emsp;在站点的配置文件<code>config.toml</code>中添加<code>Search</code>菜单</p>
+<pre><code>[[menu.main]]
+  name = &quot;搜索🔍&quot;
+  weight = 50
+  identifier = &quot;search&quot;
+  url = &quot;/search/&quot;
+</code></pre>
+<p>&emsp;&emsp;<strong>注意</strong>：可能出现表单不安全，搜索不安全等问题！</p>
+<ul>
+<li><strong>暂定解决方法</strong>：点击地址框小锁，选“网站设置”，“不安全内容”设置“允许”。检索本站，不会有安全问题！(待解决)</li>
+</ul>
+<h2 id="6-添加暗黑模式"><a href="#6-添加暗黑模式" class="headerlink" title="6. 添加暗黑模式"></a>6. 添加暗黑模式</h2><p>&emsp;&emsp;参考内容：<a target="_blank" rel="noopener" href="http://www.9ong.com/042021/hugo%E4%BC%98%E9%9B%85%E6%94%AF%E6%8C%81%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F.html#table-of-contents">http://www.9ong.com/042021/hugo%E4%BC%98%E9%9B%85%E6%94%AF%E6%8C%81%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F.html#table-of-contents</a></p>
+<p><a target="_blank" rel="noopener" href="https://radu-matei.com/blog/dark-mode/">https://radu-matei.com/blog/dark-mode/</a></p>
+<ul>
+<li>首先，在自己使用主题目录下新增<code>static/css/dark.css</code>，文件内容如下。</li>
+</ul>
+<pre><code>html &#123;
+    background-color: #171717 !important;
+&#125;
+html &#123;
+    filter: invert(100%) hue-rotate(180deg) brightness(105%) contrast(85%);
+    -webkit-filter: invert(100%) hue-rotate(180deg) brightness(105%) contrast(85%);
+&#125;
+body &#123;
+    background-color: #FFF !important;
+&#125;
+img,
+video,
+body * [style*=&quot;background-image&quot;] &#123;
+    filter: hue-rotate(180deg) contrast(100%) invert(100%);
+    -webkit-filter: hue-rotate(180deg) contrast(100%) invert(100%);
+&#125;
+</code></pre>
+<ul>
+<li>然后在主题目录中的<code>layouts/partials/scripts.html</code>文件最后追加夜间模式样式。我们后面使用<code>JavaScript</code>代码修改<code>disable</code>。</li>
+</ul>
+<pre><code>&lt;!--夜间模式样式，来源谷歌浏览器插件--&gt;
+&lt;link disabled id=&quot;dark-mode-theme&quot; rel=&quot;stylesheet&quot; href=&quot;/css/dark.css&quot;&gt;&lt;/link&gt;
+</code></pre>
+<ul>
+<li><strong>创建切换模式按钮</strong>，直接追加在<code>scripts.html</code>后。</li>
+</ul>
+<pre><code>&lt;!--创建按钮--&gt;
+&lt;li style=&quot;position: fixed;bottom: 50%;right: 75%;&quot;&gt;
+    &lt;input type=&quot;button&quot; class=&quot;fal fa-sun-o&quot; value=&quot;To Dark Mode&quot; id=&quot;dark-mode-toggle&quot;&gt;
+&lt;/li&gt;
+</code></pre>
+<ul>
+<li>最后，在<code>scripts.html</code>文件最后增加切换代码。</li>
+</ul>
+<pre><code>&lt;script&gt;
+    var toggle = document.getElementById(&quot;dark-mode-toggle&quot;);
+    var darkTheme = document.getElementById(&quot;dark-mode-theme&quot;);
+
+    var systemTheme = window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;).matches
+      ? &quot;dark&quot;
+      : &quot;light&quot;;
+
+    // the default theme is the system theme, unless the user has
+    // explicitly overriden it.
+    var savedTheme = localStorage.getItem(&quot;dark-mode-storage&quot;) || systemTheme;
+    setTheme(savedTheme);
+
+    // set the appropriate theme when the user toggles the button
+    toggle.addEventListener(&quot;click&quot;, () =&gt; &#123;
+      if (toggle.className === &quot;far fa-moon&quot;) &#123;
+        setTheme(&quot;dark&quot;);
+        localStorage.setItem(&quot;dark-mode-storage&quot;, &quot;dark&quot;);
+      &#125; else if (toggle.className === &quot;far fa-sun&quot;) &#123;
+        setTheme(&quot;light&quot;);
+        localStorage.setItem(&quot;dark-mode-storage&quot;, &quot;light&quot;);
+      &#125;
+    &#125;);
+
+    // Add an event listener when the browser theme changes.
+    // The user defined theme does take precedence, so if the
+    // changed the browser theme, do not persist the change
+    // across refreshes.
+    window
+      .matchMedia(&quot;(prefers-color-scheme: dark)&quot;)
+      .addEventListener(&quot;change&quot;, (event) =&gt; &#123;
+        if (event.matches) &#123;
+          setTheme(&quot;dark&quot;);
+        &#125; else &#123;
+          setTheme(&quot;light&quot;);
+        &#125;
+      &#125;);
+
+    function setTheme(mode) &#123;
+      if (mode === &quot;dark&quot;) &#123;
+        darkTheme.disabled = false;
+        toggle.className = &quot;far fa-sun&quot;;
+        toggle.title = &quot;Enable Light Mode&quot;;
+        toggle.value = &quot;To Light Mode&quot;;
+      &#125; else if (mode === &quot;light&quot;) &#123;
+        darkTheme.disabled = true;
+        toggle.className = &quot;far fa-moon&quot;;
+        toggle.title = &quot;Enable Dark Mode&quot;;
+        toggle.value = &quot;To Dark Mode&quot;;
+      &#125;
+    &#125;
+&lt;/script&gt;
+</code></pre>
+<ul>
+<li>主题目录中的<code>layouts/partials/scripts.html</code>文件追加的全部内容如下</li>
+</ul>
+<pre><code>&lt;!--夜间模式样式，来源谷歌浏览器插件--&gt;
+&lt;link disabled id=&quot;dark-mode-theme&quot; rel=&quot;stylesheet&quot; href=&quot;/css/dark.css&quot;&gt;&lt;/link&gt;
+
+&lt;!--创建按钮--&gt;
+&lt;li style=&quot;position: fixed;bottom: 50%;right: 75%;&quot;&gt;
+    &lt;input type=&quot;button&quot; class=&quot;fal fa-sun-o&quot; value=&quot;To Dark Mode&quot; id=&quot;dark-mode-toggle&quot;&gt;
+&lt;/li&gt;
+
+&lt;!--夜间模式和日间模式切换脚本--&gt;
+&lt;script&gt;
+    var toggle = document.getElementById(&quot;dark-mode-toggle&quot;);
+    var darkTheme = document.getElementById(&quot;dark-mode-theme&quot;);
+
+    var systemTheme = window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;).matches
+      ? &quot;dark&quot;
+      : &quot;light&quot;;
+
+    // the default theme is the system theme, unless the user has
+    // explicitly overriden it.
+    var savedTheme = localStorage.getItem(&quot;dark-mode-storage&quot;) || systemTheme;
+    setTheme(savedTheme);
+
+    // set the appropriate theme when the user toggles the button
+    toggle.addEventListener(&quot;click&quot;, () =&gt; &#123;
+      if (toggle.className === &quot;far fa-moon&quot;) &#123;
+        setTheme(&quot;dark&quot;);
+        localStorage.setItem(&quot;dark-mode-storage&quot;, &quot;dark&quot;);
+      &#125; else if (toggle.className === &quot;far fa-sun&quot;) &#123;
+        setTheme(&quot;light&quot;);
+        localStorage.setItem(&quot;dark-mode-storage&quot;, &quot;light&quot;);
+      &#125;
+    &#125;);
+
+    // Add an event listener when the browser theme changes.
+    // The user defined theme does take precedence, so if the
+    // changed the browser theme, do not persist the change
+    // across refreshes.
+    window
+      .matchMedia(&quot;(prefers-color-scheme: dark)&quot;)
+      .addEventListener(&quot;change&quot;, (event) =&gt; &#123;
+        if (event.matches) &#123;
+          setTheme(&quot;dark&quot;);
+        &#125; else &#123;
+          setTheme(&quot;light&quot;);
+        &#125;
+      &#125;);
+
+    function setTheme(mode) &#123;
+      if (mode === &quot;dark&quot;) &#123;
+        darkTheme.disabled = false;
+        toggle.className = &quot;far fa-sun&quot;;
+        toggle.title = &quot;Enable Light Mode&quot;;
+        toggle.value = &quot;To Light Mode&quot;;
+      &#125; else if (mode === &quot;light&quot;) &#123;
+        darkTheme.disabled = true;
+        toggle.className = &quot;far fa-moon&quot;;
+        toggle.title = &quot;Enable Dark Mode&quot;;
+        toggle.value = &quot;To Dark Mode&quot;;
+      &#125;
+    &#125;
+&lt;/script&gt;
+</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/hugo/">
+                                    <span class="chip bg-color">hugo</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">给点吧！</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.iohttps://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/createblog/alipay.ou2hknykqkg.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.iohttps://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/createblog/wechat.54pag1rjudg0.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/comment_bg.xfqkznzj4w0.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'DORpC5bDUoaXmJQyhtMU0fyi-gzGzoHsz',
+        appKey: 'gFvTRDzcAQ8FLAzRP6bLlliG',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '说点什么呗'
+    });
+</script>
+
+<!-- ֱ������ -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="ֱ������">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/59109.html">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/1.1kdunfmnl4yo.jpg" class="responsive-img" alt="LeetCode高频考题刷题笔记-中等">
+                        
+                        <span class="card-title">LeetCode高频考题刷题笔记-中等</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            LeetCode算法刷题，高频中等题目
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/" class="post-category">
+                                    数据结构与算法刷题
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
+                    </a>
+                    
+                    <a href="/tags/LeetCode-medium/">
+                        <span class="chip bg-color">LeetCode-medium</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/43449.html">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/wangxinzhi0/PicX-image@master/hexo/8.66pckd4d60o0.jpg" class="responsive-img" alt="hugo博客搭建">
+                        
+                        <span class="card-title">hugo博客搭建</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            hugo静态博客框架，even主题搭建个人博客
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-category">
+                                    个人博客
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hugo/">
+                        <span class="chip bg-color">hugo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">����־</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">114.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wangxinzhi0/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:xinzhi_wang0@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1761039972" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1761039972" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/zhi-ge-38-58" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/zhi-ge-38-58" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/wangxinzhi0/wangxinzhi0.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left"},"mobile":{"show":false,"scale":0.5},"react":{"opacity":1}});</script></body>
+
+</html>
