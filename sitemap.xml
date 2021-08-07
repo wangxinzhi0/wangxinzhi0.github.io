@@ -186,7 +186,28 @@
   </url>
   
   <url>
+    <loc>https://wangxinzhi.top/tags/LeetCode-easy/</loc>
+    <lastmod>2021-08-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangxinzhi.top/tags/LeetCode/</loc>
+    <lastmod>2021-08-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wangxinzhi.top/tags/%E7%9C%9F%E7%9F%A5%E7%81%BC%E8%A7%81/</loc>
+    <lastmod>2021-08-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangxinzhi.top/tags/LeetCode-medium/</loc>
     <lastmod>2021-08-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -208,27 +229,6 @@
   
   <url>
     <loc>https://wangxinzhi.top/tags/%E7%94%B3%E8%AE%BA/</loc>
-    <lastmod>2021-08-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangxinzhi.top/tags/LeetCode-easy/</loc>
-    <lastmod>2021-08-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangxinzhi.top/tags/LeetCode/</loc>
-    <lastmod>2021-08-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangxinzhi.top/tags/LeetCode-medium/</loc>
     <lastmod>2021-08-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
