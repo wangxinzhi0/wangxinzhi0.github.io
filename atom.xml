@@ -6,7 +6,7 @@
   <link href="https://wangxinzhi.top/atom.xml" rel="self"/>
   
   <link href="https://wangxinzhi.top/"/>
-  <updated>2021-06-02T14:11:26.716Z</updated>
+  <updated>2021-08-03T00:24:01.396Z</updated>
   <id>https://wangxinzhi.top/</id>
   
   <author>
@@ -15,58 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://wangxinzhi.top/posts/49168.html"/>
-    <id>https://wangxinzhi.top/posts/49168.html</id>
-    <published>2021-08-07T01:30:41.313Z</published>
-    <updated>2021-06-02T14:11:26.716Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://wangxinzhi.top/posts/21001.html"/>
-    <id>https://wangxinzhi.top/posts/21001.html</id>
-    <published>2021-08-07T01:30:41.298Z</published>
-    <updated>2021-06-02T14:11:26.748Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://wangxinzhi.top/posts/43535.html"/>
-    <id>https://wangxinzhi.top/posts/43535.html</id>
-    <published>2021-08-07T01:30:41.277Z</published>
-    <updated>2021-06-02T14:11:26.690Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://wangxinzhi.top/posts/10434.html"/>
-    <id>https://wangxinzhi.top/posts/10434.html</id>
-    <published>2021-08-07T01:30:41.256Z</published>
-    <updated>2021-06-02T14:11:26.695Z</updated>
-    
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>华为机试题库</title>
@@ -147,25 +95,6 @@
   </entry>
   
   <entry>
-    <title>02 类加载子系统</title>
-    <link href="https://wangxinzhi.top/posts/28093.html"/>
-    <id>https://wangxinzhi.top/posts/28093.html</id>
-    <published>2021-06-02T16:00:00.000Z</published>
-    <updated>2021-06-02T14:11:26.800Z</updated>
-    
-    
-    
-    
-    <category term="JVM上篇" scheme="https://wangxinzhi.top/categories/JVM%E4%B8%8A%E7%AF%87/"/>
-    
-    
-    <category term="JVM" scheme="https://wangxinzhi.top/tags/JVM/"/>
-    
-    <category term="内存与垃圾回收" scheme="https://wangxinzhi.top/tags/%E5%86%85%E5%AD%98%E4%B8%8E%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>01 JVM与Java体系架构</title>
     <link href="https://wangxinzhi.top/posts/59662.html"/>
     <id>https://wangxinzhi.top/posts/59662.html</id>
@@ -196,9 +125,9 @@
     <link href="https://wangxinzhi.top/posts/31415.html"/>
     <id>https://wangxinzhi.top/posts/31415.html</id>
     <published>2021-05-21T16:00:00.000Z</published>
-    <updated>2021-08-04T13:44:28.066Z</updated>
+    <updated>2021-08-07T03:18:58.857Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>写在前面</strong></p><p>&emsp;&emsp;虽然博主关于怎么部署个人博客写的十分清除明白，但由于软件版本迭代等原因，实际操作可能出现各种问题。自己调试了好久，终于实现了这个博客主题，真的好开心，主题是的好看，感谢<a href="https://sitoi.cn/">博主</a>！特此记录操作过程。</p><h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><p>&emsp;&emsp;主要安装<code>Node.js</code>、<code>Hexo</code>、<code>Git</code>和配置<code>Github SSH key</code>，及创建<code>Github Pages</code>页面。</p><p>&emsp;&emsp;具体操作请参考<a href="https://sitoi.cn/posts/6666.html">这篇博客</a></p><h2 id="2-初始化Hexo项目"><a href="#2-初始化Hexo项目" class="headerlink" title="2. 初始化Hexo项目"></a>2. 初始化Hexo项目</h2><p>&emsp;&emsp;主要包括安装依赖包、本地启动博客、部署到<code>Github</code>。&emsp;具体操作请参考<a href="https://sitoi.cn/posts/27801.html">这篇博客</a>，主要命令如下：</p><pre><code># 初始化Hexo项目hexo init hexoblog# 切换到项目目录cd hexoblog# 安装npm包npm i# 本地启动Hexo博客hexo server# 安装hexo-deployer-git插件npm install hexo-deployer-git --save--------------# 修改_config.yml文件中的url和deploy仓库地址url: http://wangxinzhi0.github.iodeploy:  type: git  repo: git@github.com:wangxinzhi0/wangxinzhi0.github.io.git  branch: master--------------# 部署博客到githubhexo generatehexo deploy</code></pre><p>&emsp;&emsp;<code>hexo init hexoblog</code>初始化博客时<strong>可能遇到的问题</strong></p><p>&emsp;&emsp;<strong>错误一</strong>：<code>OpenSSL SSL_read: Connection was reset, errno 10054</code>错误，输入下方命令：</p><pre><code>git config --global http.sslVerify &quot;false&quot;</code></pre><p>&emsp;&emsp;<strong>错误二</strong>：<code>Failed to connect to github.com port 443: Timed out</code>错误，输入下方命令<strong>取消<code>http(s)</code>代理</strong>：</p><pre><code>git config --global --unset http.proxygit config --global --unset https.proxy</code></pre><p>&emsp;&emsp;<strong>注意</strong>：如果设置完还出现上面错误，多试几次即可。</p><h2 id="3-设置美美的主题"><a href="#3-设置美美的主题" class="headerlink" title="3. 设置美美的主题"></a>3. 设置美美的主题</h2><p>&emsp;&emsp;完成上面两步之后，你应该已经有一个<code>Hexo</code>博客了。接下来我们借助<code>matery</code>主题美化博客，这里使用<code>Sitoi</code>的<code>github</code>项目实现博客美化。</p><ul><li><strong>第一步</strong>：安装依赖包，在自己博客根目录依次执行下面命令</li></ul><pre><code># 安装npm依赖包npm install# 检测hexo版本，设置为4.1.1，版本不对会出错hexo --versionnpm i hexo@4.1.1# hexo-abbrlink生成非中文链接# 自动为每篇文章生成一串数字作每篇文章的 URI 地址。每篇文章的# Front-matter 中会自动增加一个配置项：abbrlink: xxxxx，该项# 的值就是当前文章的URI地址。npm install hexo-abbrlink --save# 基于 hexo-generator-feed 的 Hexo 插件来做 RSSnpm install hexo-generator-feed --save# 配置页脚信息，统计文章字数npm i --save hexo-wordcount# 代码高亮插件，Hexo自带高亮主题丑npm i -S hexo-prism-plugin# 内容搜索插件npm install hexo-generator-search --save# （可选）看板娘插件和&quot;现有的&quot;模型安装https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.mdnpm install --save hexo-helper-live2dnpm install --save live2d-widget-model-epsilon2_1#（可选）hexo-neat 优化提速插件（去掉 HTML、css、js 的 blank 字符）npm install hexo-n</code></pre><ul><li><strong>第二步</strong>：点击<a href="https://github.com/Sitoi/Sitoi-blog">这里</a>下载博客项目源码到本地</li></ul><p>&emsp;&emsp;将下载博客项目里的<code>config.yml</code>文件拷贝到自己的博客目录，根据<a href="https://sitoi.cn/posts/63466.html">这篇博客</a>配置所有的<code>config.yml</code>内容，不需要再安装插件（所有插件上述已经安装）。</p><p>&emsp;&emsp;注意：<code>emoji</code>表情支持插件安装失败，参考博客目录<code>10.8</code>指导不开启该功能即可。</p><ul><li><strong>第三步</strong>：拷贝相关文件到自己博客中</li></ul><p>&emsp;&emsp;首先把自己博客中的<code>scaffolds</code>、<code>source</code>、<code>themes</code>文件夹删除（如果有博客、主题等重要内容<strong>记得备份</strong>），然后从下载博客项目中拷贝这<code>3</code>个文件到自己博客中。</p><p>&emsp;&emsp;预览效果<code>hexo s</code>，如果出现<code>ERROR Plugin load failed: hexo-theme-landscape</code>错误，删除博客根目录<code>node_modules/hexo-theme-landscape</code>文件夹即可。</p><ul><li><strong>第四步</strong>：部署到远端</li></ul><p>&emsp;&emsp;其实就是<code>config.yml</code>中远端仓库的设置。</p><p>&emsp;&emsp;这一步可能<strong>部署到远端是空白页</strong>，仔细观察发现生成的<code>public</code>文件就是空的。需要卸载原有的<code>node.js</code>，重新安装<a href="https://nodejs.org/download/release/v13.5.0/">13.5.0版本的node.js</a>。在博客目录执行命令<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>，问题就解决了。</p><ul><li><strong>第五步</strong>：一些自己的设置</li></ul><p>&emsp;&emsp;<code>Hexo</code><a href="https://zhuanlan.zhihu.com/p/69211731">博客美化合集</a>，设置看板娘会导致短暂的网页格式错误，暂未找到解决方案。</p><h2 id="4-文章Front-matter介绍"><a href="#4-文章Front-matter介绍" class="headerlink" title="4. 文章Front-matter介绍"></a>4. 文章Front-matter介绍</h2><p>&emsp;&emsp;<code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p><p>&emsp;&emsp;示例：</p><pre class=" language-YAML"><code class="language-YAML">title: 基于 Hexo GitHub 从零开始搭建个人博客date: 2019-12-30 09:25:00author: Sitoiimg: /source/images/xxx.jpgtop: truecover: truecoverImg: /images/1.jpgtoc: falsemathjax: falsesummary: 这是你自定义的文章摘要内容categories: Hexokeywords: Hexo GitHub blogtags:    - Hexo    - Blog    - GitHub</code></pre><table><thead><tr><th>配置选项</th><th>默认值</th><th>描述</th></tr></thead><tbody><tr><td>title</td><td><code>Markdown</code> 文件标题</td><td>文章标题，强烈建议填写此选项</td></tr><tr><td>date</td><td>文件创建时的日期时间</td><td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td></tr><tr><td>author</td><td>跟 <code>_config.yml</code> 中的 <code>author</code></td><td>文章作者</td></tr><tr><td>img</td><td><code>featureImages</code> 中的某个值</td><td>文章特征图，推荐使用图床 (腾讯云、七牛云、又拍云等) 来做图片的路径。如: <code>http://xxx.com/xxx.jpg</code></td></tr><tr><td>top</td><td><code>true</code></td><td>推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td></tr><tr><td>cover</td><td><code>false</code></td><td>表示该文章是否需要加入到首页轮播封面中</td></tr><tr><td>coverImg</td><td>无</td><td>表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td></tr><tr><td>password</td><td>无</td><td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td></tr><tr><td>toc</td><td><code>true</code></td><td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td></tr><tr><td>mathjax</td><td><code>false</code></td><td>是否开启数学公式支持，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td></tr><tr><td>summary</td><td>无</td><td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td></tr><tr><td>categories</td><td>无</td><td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td></tr><tr><td>tags</td><td>无</td><td>文章标签，一篇文章可以多个标签</td></tr><tr><td>keywords</td><td>文章标题</td><td>文章关键字，SEO 时需要</td></tr><tr><td>reprintPolicy</td><td>cc_by</td><td>文章转载规则，可以是 <code>cc_by</code>,<code>cc_by_nd</code>,<code>cc_by_sa</code>,<code>cc_by_nc</code>,<code>cc_by_nc_nd</code>,<code>cc_by_nc_sa</code>,<code>cc0</code>,<code>noreprint</code> 或 <code>pay</code> 中的一个</td></tr></tbody></table><h2 id="5-主题音频、视频部署方法"><a href="#5-主题音频、视频部署方法" class="headerlink" title="5.主题音频、视频部署方法"></a>5.主题音频、视频部署方法</h2><p><strong>方案一</strong>：</p><p>&emsp;&emsp;将本地音频、视频上传到<a href="https://u.3w.cn/home">三维推</a>，在主页场景应用中有音频推广和视频推广，上传等待审核即可。</p><p>&emsp;&emsp;审核通过之后，复制应用链接，到浏览器地址栏访问。<strong>对于视频</strong>，右键检查，你会找到<code>src=&quot;https://xxx.mp4&quot;</code>链接，把它复制到<code>config.yml</code>首页视频设置即可。<strong>对于音频</strong>，右键检查，你会找到<code>src=&quot;https://xxx.mp3&quot;</code>链接，复制链接到<code>source/data/musics.json</code>中，音频封面图可以在网易云等网站找到，或者自己随便指定音频封面。</p><p><strong>方案二</strong>：</p><p>&emsp;&emsp;白嫖在线视频剪辑<a href="https://www.kapwing.com/">kapwing</a>空间（需要登录），导出视频，音频，右键检查，找到<code>mp4</code>和<code>mp3</code>链接，进行相关部署即可。</p><h2 id="6-配置直达评论和暗色切换功能"><a href="#6-配置直达评论和暗色切换功能" class="headerlink" title="6.配置直达评论和暗色切换功能"></a>6.配置直达评论和暗色切换功能</h2><p>&emsp;&emsp;直达评论：<a href="https://blog.csdn.net/cungudafa/article/details/106278206">参考博客</a></p><p>&emsp;&emsp;暗色切换：<a href="https://nekodeng.gitee.io/posts/blog-night-mode.html#toc-heading-1">参考博客</a>。注意<code>深色模式按钮</code>放在<code>body</code>标签开始后，按钮的<code>js</code>代码追加到<code>/source/js/matery.js</code>末尾，按钮css样式和覆盖样式追加<code>/source/css/matery.css</code>末尾。</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>写在前面</strong></p><p>&emsp;&emsp;虽然博主关于怎么部署个人博客写的十分清除明白，但由于软件版本迭代等原因，实际操作可能出现各种问题。自己调试了好久，终于实现了这个博客主题，真的好开心，主题是的好看，感谢<a href="https://sitoi.cn/">博主</a>！特此记录操作过程。</p><h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><p>&emsp;&emsp;主要安装<code>Node.js</code>、<code>Hexo</code>、<code>Git</code>和配置<code>Github SSH key</code>，及创建<code>Github Pages</code>页面。</p><p>&emsp;&emsp;具体操作请参考<a href="https://sitoi.cn/posts/6666.html">这篇博客</a></p><h2 id="2-初始化Hexo项目"><a href="#2-初始化Hexo项目" class="headerlink" title="2. 初始化Hexo项目"></a>2. 初始化Hexo项目</h2><p>&emsp;&emsp;主要包括安装依赖包、本地启动博客、部署到<code>Github</code>。&emsp;具体操作请参考<a href="https://sitoi.cn/posts/27801.html">这篇博客</a>，主要命令如下：</p><pre class=" language-YAML"><code class="language-YAML"># 初始化Hexo项目hexo init hexoblog# 切换到项目目录cd hexoblog# 安装npm包npm i# 本地启动Hexo博客hexo server# 安装hexo-deployer-git插件npm install hexo-deployer-git --save--------------# 修改_config.yml文件中的url和deploy仓库地址url: http://wangxinzhi0.github.iodeploy:  type: git  repo: git@github.com:wangxinzhi0/wangxinzhi0.github.io.git  branch: master--------------# 部署博客到githubhexo generatehexo deploy</code></pre><p>&emsp;&emsp;<code>hexo init hexoblog</code>初始化博客时<strong>可能遇到的问题</strong></p><p>&emsp;&emsp;<strong>错误一</strong>：<code>OpenSSL SSL_read: Connection was reset, errno 10054</code>错误，输入下方命令：</p><pre class=" language-yaml"><code class="language-yaml">git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global http.sslVerify "false"</code></pre><p>&emsp;&emsp;<strong>错误二</strong>：<code>Failed to connect to github.com port 443: Timed out</code>错误，输入下方命令<strong>取消<code>http(s)</code>代理</strong>：</p><pre class=" language-yaml"><code class="language-yaml">git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global <span class="token punctuation">-</span><span class="token punctuation">-</span>unset http.proxygit config <span class="token punctuation">-</span><span class="token punctuation">-</span>global <span class="token punctuation">-</span><span class="token punctuation">-</span>unset https.proxy</code></pre><p>&emsp;&emsp;<strong>注意</strong>：如果设置完还出现上面错误，多试几次即可。</p><h2 id="3-设置美美的主题"><a href="#3-设置美美的主题" class="headerlink" title="3. 设置美美的主题"></a>3. 设置美美的主题</h2><p>&emsp;&emsp;完成上面两步之后，你应该已经有一个<code>Hexo</code>博客了。接下来我们借助<code>matery</code>主题美化博客，这里使用<code>Sitoi</code>的<code>github</code>项目实现博客美化。</p><ul><li><strong>第一步</strong>：安装依赖包，在自己博客根目录依次执行下面命令</li></ul><pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 安装npm依赖包</span>npm install<span class="token comment" spellcheck="true"># 检测hexo版本，设置为4.1.1，版本不对会出错</span>hexo <span class="token punctuation">-</span><span class="token punctuation">-</span>versionnpm i hexo@4.1.1<span class="token comment" spellcheck="true"># hexo-abbrlink生成非中文链接</span><span class="token comment" spellcheck="true"># 自动为每篇文章生成一串数字作每篇文章的 URI 地址。每篇文章的</span><span class="token comment" spellcheck="true"># Front-matter 中会自动增加一个配置项：abbrlink: xxxxx，该项# 的值就是当前文章的URI地址。</span>npm install hexo<span class="token punctuation">-</span>abbrlink <span class="token punctuation">-</span><span class="token punctuation">-</span>save<span class="token comment" spellcheck="true"># 基于 hexo-generator-feed 的 Hexo 插件来做 RSS</span>npm install hexo<span class="token punctuation">-</span>generator<span class="token punctuation">-</span>feed <span class="token punctuation">-</span><span class="token punctuation">-</span>save<span class="token comment" spellcheck="true"># 配置页脚信息，统计文章字数</span>npm i <span class="token punctuation">-</span><span class="token punctuation">-</span>save hexo<span class="token punctuation">-</span>wordcount<span class="token comment" spellcheck="true"># 代码高亮插件，Hexo自带高亮主题丑</span>npm i <span class="token punctuation">-</span>S hexo<span class="token punctuation">-</span>prism<span class="token punctuation">-</span>plugin<span class="token comment" spellcheck="true"># 内容搜索插件</span>npm install hexo<span class="token punctuation">-</span>generator<span class="token punctuation">-</span>search <span class="token punctuation">-</span><span class="token punctuation">-</span>save<span class="token comment" spellcheck="true"># （可选）看板娘插件和"现有的"模型安装https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md</span>npm install <span class="token punctuation">-</span><span class="token punctuation">-</span>save hexo<span class="token punctuation">-</span>helper<span class="token punctuation">-</span>live2dnpm install <span class="token punctuation">-</span><span class="token punctuation">-</span>save live2d<span class="token punctuation">-</span>widget<span class="token punctuation">-</span>model<span class="token punctuation">-</span>epsilon2_1<span class="token comment" spellcheck="true">#（可选）hexo-neat 优化提速插件（去掉 HTML、css、js 的 blank 字符）</span>npm install hexo<span class="token punctuation">-</span>n</code></pre><ul><li><strong>第二步</strong>：点击<a href="https://github.com/Sitoi/Sitoi-blog">这里</a>下载博客项目源码到本地</li></ul><p>&emsp;&emsp;将下载博客项目里的<code>config.yml</code>文件拷贝到自己的博客目录，根据<a href="https://sitoi.cn/posts/63466.html">这篇博客</a>配置所有的<code>config.yml</code>内容，不需要再安装插件（所有插件上述已经安装）。</p><p>&emsp;&emsp;注意：<code>emoji</code>表情支持插件安装失败，参考博客目录<code>10.8</code>指导不开启该功能即可。</p><ul><li><strong>第三步</strong>：拷贝相关文件到自己博客中</li></ul><p>&emsp;&emsp;首先把自己博客中的<code>scaffolds</code>、<code>source</code>、<code>themes</code>文件夹删除（如果有博客、主题等重要内容<strong>记得备份</strong>），然后从下载博客项目中拷贝这<code>3</code>个文件到自己博客中。</p><p>&emsp;&emsp;预览效果<code>hexo s</code>，如果出现<code>ERROR Plugin load failed: hexo-theme-landscape</code>错误，删除博客根目录<code>node_modules/hexo-theme-landscape</code>文件夹即可。</p><ul><li><strong>第四步</strong>：部署到远端</li></ul><p>&emsp;&emsp;其实就是<code>config.yml</code>中远端仓库的设置。</p><p>&emsp;&emsp;这一步可能<strong>部署到远端是空白页</strong>，仔细观察发现生成的<code>public</code>文件就是空的。需要卸载原有的<code>node.js</code>，重新安装<a href="https://nodejs.org/download/release/v13.5.0/">13.5.0版本的node.js</a>。在博客目录执行命令<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>，问题就解决了。</p><ul><li><strong>第五步</strong>：一些自己的设置</li></ul><p>&emsp;&emsp;<code>Hexo</code><a href="https://zhuanlan.zhihu.com/p/69211731">博客美化合集</a>，设置看板娘会导致短暂的网页格式错误，暂未找到解决方案。</p><h2 id="4-文章Front-matter介绍"><a href="#4-文章Front-matter介绍" class="headerlink" title="4. 文章Front-matter介绍"></a>4. 文章Front-matter介绍</h2><p>&emsp;&emsp;<code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p><p>&emsp;&emsp;示例：</p><pre class=" language-YAML"><code class="language-YAML">title: 基于 Hexo GitHub 从零开始搭建个人博客date: 2019-12-30 09:25:00author: Sitoiimg: /source/images/xxx.jpgtop: truecover: truecoverImg: /images/1.jpgtoc: falsemathjax: falsesummary: 这是你自定义的文章摘要内容categories: Hexokeywords: Hexo GitHub blogtags:    - Hexo    - Blog    - GitHub</code></pre><table><thead><tr><th>配置选项</th><th>默认值</th><th>描述</th></tr></thead><tbody><tr><td>title</td><td><code>Markdown</code> 文件标题</td><td>文章标题，强烈建议填写此选项</td></tr><tr><td>date</td><td>文件创建时的日期时间</td><td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td></tr><tr><td>author</td><td>跟 <code>_config.yml</code> 中的 <code>author</code></td><td>文章作者</td></tr><tr><td>img</td><td><code>featureImages</code> 中的某个值</td><td>文章特征图，推荐使用图床 (腾讯云、七牛云、又拍云等) 来做图片的路径。如: <code>http://xxx.com/xxx.jpg</code></td></tr><tr><td>top</td><td><code>true</code></td><td>推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td></tr><tr><td>cover</td><td><code>false</code></td><td>表示该文章是否需要加入到首页轮播封面中</td></tr><tr><td>coverImg</td><td>无</td><td>表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td></tr><tr><td>password</td><td>无</td><td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td></tr><tr><td>toc</td><td><code>true</code></td><td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td></tr><tr><td>mathjax</td><td><code>false</code></td><td>是否开启数学公式支持，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td></tr><tr><td>summary</td><td>无</td><td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td></tr><tr><td>categories</td><td>无</td><td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td></tr><tr><td>tags</td><td>无</td><td>文章标签，一篇文章可以多个标签</td></tr><tr><td>keywords</td><td>文章标题</td><td>文章关键字，SEO 时需要</td></tr><tr><td>reprintPolicy</td><td>cc_by</td><td>文章转载规则，可以是 <code>cc_by</code>,<code>cc_by_nd</code>,<code>cc_by_sa</code>,<code>cc_by_nc</code>,<code>cc_by_nc_nd</code>,<code>cc_by_nc_sa</code>,<code>cc0</code>,<code>noreprint</code> 或 <code>pay</code> 中的一个</td></tr></tbody></table><h2 id="5-主题音频、视频部署方法"><a href="#5-主题音频、视频部署方法" class="headerlink" title="5.主题音频、视频部署方法"></a>5.主题音频、视频部署方法</h2><p><strong>方案一</strong>：</p><p>&emsp;&emsp;将本地音频、视频上传到<a href="https://u.3w.cn/home">三维推</a>，在主页场景应用中有音频推广和视频推广，上传等待审核即可。</p><p>&emsp;&emsp;审核通过之后，复制应用链接，到浏览器地址栏访问。<strong>对于视频</strong>，右键检查，你会找到<code>src=&quot;https://xxx.mp4&quot;</code>链接，把它复制到<code>config.yml</code>首页视频设置即可。<strong>对于音频</strong>，右键检查，你会找到<code>src=&quot;https://xxx.mp3&quot;</code>链接，复制链接到<code>source/data/musics.json</code>中，音频封面图可以在网易云等网站找到，或者自己随便指定音频封面。</p><p><strong>方案二</strong>：</p><p>&emsp;&emsp;白嫖在线视频剪辑<a href="https://www.kapwing.com/">kapwing</a>空间（需要登录），导出视频，音频，右键检查，找到<code>mp4</code>和<code>mp3</code>链接，进行相关部署即可。</p><h2 id="6-配置直达评论和暗色切换功能"><a href="#6-配置直达评论和暗色切换功能" class="headerlink" title="6.配置直达评论和暗色切换功能"></a>6.配置直达评论和暗色切换功能</h2><p>&emsp;&emsp;直达评论：<a href="https://blog.csdn.net/cungudafa/article/details/106278206">参考博客</a></p><p>&emsp;&emsp;暗色切换：<a href="https://nekodeng.gitee.io/posts/blog-night-mode.html#toc-heading-1">参考博客</a>。注意<code>深色模式按钮</code>放在<code>body</code>标签开始后，按钮的<code>js</code>代码追加到<code>/source/js/matery.js</code>末尾，按钮css样式和覆盖样式追加<code>/source/css/matery.css</code>末尾。</p>]]></content>
     
     
       
